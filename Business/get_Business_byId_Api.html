@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Get Single Business By Id Api - CMMS Api Doc</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Get Single Business By Id Api";
+    var mkdocs_page_input_path = "Business\\get_Business_byId_Api.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../Account/index.html" class="icon icon-home"> CMMS Api Doc</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Account/index.html">Account</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Asset/index.html">Asset</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEvent/index.html">AssetEvent</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEventType/index.html">AssetEventType</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="index.html">Business</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../Account/index.html">CMMS Api Doc</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../Account/index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Get Single Business By Id Api</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="get-single-business-by-id-api">Get Single Business By Id Api</h1>
+<p>Get a single Business by id if current Business was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/business/:Id</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the business.</p>
+<h2 id="success-response">Success Response</h2>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<p><strong>Resonse example</strong></p>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;data&quot;: 
+        {
+            &quot;_id&quot;: &quot;6&quot;,
+            &quot;strProvince&quot;:&quot;String&quot;,
+            &quot;strPostalCode&quot;:&quot;String&quot;,
+            &quot;strTimezone&quot;:&quot;String&quot;,
+            &quot;strPrimaryEmail&quot;:&quot;String&quot;,
+            &quot;strName&quot;:&quot;String&quot;,
+            &quot;strPhone&quot;:&quot;String&quot;,
+            &quot;strFax&quot;:&quot;String&quot;,
+            &quot;intCountryID&quot;:&quot;Integer&quot;,
+            &quot;strAddress&quot;:&quot;String&quot;,
+            &quot;strPrimaryContact&quot;:&quot;String&quot;,
+            &quot;strNotes&quot;:&quot;String&quot;,
+            &quot;strPhone2&quot;:&quot;String&quot;,
+            &quot;strCode&quot;:&quot;String&quot;,
+            &quot;strCity&quot;:&quot;String&quot;,
+            &quot;strSecondaryEmail&quot;:&quot;String&quot;
+        }
+}
+</code></pre>
+
+<h2 id="error-responses">Error Responses</h2>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<p><strong>Resonse example</strong></p>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<h3 id="or">Or</h3>
+<p><strong>Condition</strong> : If Business does not exist on server.</p>
+<p><strong>Code</strong> : <code>404 Not Found</code></p>
+<p><strong>Content example</strong></p>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Not found&quot;, 
+   &quot;data&quot;:null
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

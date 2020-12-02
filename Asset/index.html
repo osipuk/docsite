@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Asset - CMMS Api Doc</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Asset";
+    var mkdocs_page_input_path = "Asset\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../Account/index.html" class="icon icon-home"> CMMS Api Doc</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Account/index.html">Account</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">Asset</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-asset">Create Asset</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-asset-list">Get all asset list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-asset">Update Asset</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-asset-by-id">Get Single Asset By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-asset">Delete  Asset</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEvent/index.html">AssetEvent</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEventType/index.html">AssetEventType</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Business/index.html">Business</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../Account/index.html">CMMS Api Doc</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../Account/index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Asset</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="create-asset">Create Asset</h1>
+<p>This object is used to represent the assets that are to be managed by the CMMS : these can be equipments, locations and facilities, or tools</p>
+<p>Create an Asset if  Asset does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/assets</code></p>
+<p><strong>Method</strong> : <code>POST</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strName</td>
+<td align="left">String</td>
+<td>Display name of the asset.</td>
+</tr>
+<tr>
+<td align="left">strDescription</td>
+<td align="left">String</td>
+<td>A short text describing the asset.</td>
+</tr>
+<tr>
+<td align="left">strMake</td>
+<td align="left">String</td>
+<td>For equipment or tools, this field can be used to store the brand's name of the asset.</td>
+</tr>
+<tr>
+<td align="left">strMake</td>
+<td align="left">String</td>
+<td>For equipment or tools, this field can be used to store the brand's name of the asset.</td>
+</tr>
+<tr>
+<td align="left">strModel</td>
+<td align="left">String</td>
+<td>For equipment or tools, this field can be used to store the model's name of the asset.</td>
+</tr>
+<tr>
+<td align="left">qtyMinStockCount</td>
+<td align="left">integer</td>
+<td>Mininum stock count for the asset.</td>
+</tr>
+<tr>
+<td align="left">strCity</td>
+<td align="left">String</td>
+<td>The city the asset is located into.</td>
+</tr>
+<tr>
+<td align="left">strShippingTerms</td>
+<td align="left">String</td>
+<td>This field can be used to add comments about the shipping terms of the asset. For example : <code>"Item is heavier than 20kg and must be delivered before 10AM."</code></td>
+</tr>
+<tr>
+<td align="left">strAddress</td>
+<td align="left">String</td>
+<td>Street number and street name of the address the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">strNotes</td>
+<td align="left">String</td>
+<td>This field can be used to store additional details about the asset like the name of its supplier, a voltage range or dimensions for example.</td>
+</tr>
+<tr>
+<td align="left">strProvince</td>
+<td align="left">String</td>
+<td>Code or full name of the province the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">intCountryID</td>
+<td align="left">integer</td>
+<td>The ID of the country the asset is located at. For example : <code>124</code> for Canada or <code>840</code> for United States of America. For getting all possible values, please refer to the Country section.</td>
+</tr>
+<tr>
+<td align="left">strInventoryCode</td>
+<td align="left">String</td>
+<td>This field can be used to store an inventory code for the asset.</td>
+</tr>
+<tr>
+<td align="left">qtyStockCount</td>
+<td align="left">Integer</td>
+<td>Indicates the current stock count for the asset.</td>
+</tr>
+<tr>
+<td align="left">intSiteID</td>
+<td align="left">Integer</td>
+<td>For multi-sites tenants, the ID of the site where the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">strRow</td>
+<td align="left">String</td>
+<td>The row where the asset is located at in a facility.</td>
+</tr>
+<tr>
+<td align="left">strMASourceProduct</td>
+<td align="left">string</td>
+<td>A JSON formatted string giving details about an asset coming from MA Source.</td>
+</tr>
+<tr>
+<td align="left">strAisle</td>
+<td align="left">string</td>
+<td>The aisle where the asset is located at in a facility.</td>
+</tr>
+<tr>
+<td align="left">strBinNumber</td>
+<td align="left">string</td>
+<td>The number of the bin where the asset is stored.</td>
+</tr>
+<tr>
+<td align="left">intCategoryID</td>
+<td align="left">Integer</td>
+<td>The ID of the category the asset is directly attached to.</td>
+</tr>
+<tr>
+<td align="left">strPostalCode</td>
+<td align="left">string</td>
+<td>The postal code of the address the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">strSerialNumber</td>
+<td align="left">string</td>
+<td>This field can be used to store the serial number of the asset.</td>
+</tr>
+<tr>
+<td align="left">strCode</td>
+<td align="left">string</td>
+<td>This field can be used to define a code associated with the asset.</td>
+</tr>
+<tr>
+<td align="left">dblLatitude</td>
+<td align="left">Double</td>
+<td>The latitude of the geographic location of the asset.</td>
+</tr>
+<tr>
+<td align="left">dblLongitude</td>
+<td align="left">Double</td>
+<td>The longitude of the geographic location of the asset.</td>
+</tr>
+<tr>
+<td align="left">strUnspcCode</td>
+<td align="left">String</td>
+<td>This field can be used to store the United Nations Standard Products and Services Code of the asset.</td>
+</tr>
+<tr>
+<td align="left">dblLastPrice</td>
+<td align="left">Double</td>
+<td>Last Purchase Price Per Unit on Asset</td>
+</tr>
+<tr>
+<td align="left">bolIsBillToFacility</td>
+<td align="left">Boolean</td>
+<td>If set to true, indicates that invoices for assets (usually parts/supplies) should be sent to this facility.</td>
+</tr>
+<tr>
+<td align="left">intAssetLocationID</td>
+<td align="left">Integer</td>
+<td>An integer uniquely defining the location of asset. Refers to Asset with an asset category as Locations And Facilities</td>
+</tr>
+<tr>
+<td align="left">bolIsOnline</td>
+<td align="left">Boolean</td>
+<td>A boolean value representing if the related Asset is online or offline, 1 or 0 respectively.</td>
+</tr>
+<tr>
+<td align="left">bolIsShippingOrReceivingFacility</td>
+<td align="left">Boolean</td>
+<td>A boolean that identifies whether a facility ships or receives assets (usually parts/supplies).</td>
+</tr>
+<tr>
+<td align="left">strQuotingTerms</td>
+<td align="left">Boolean</td>
+<td>Quoting terms that are automatically added to RFQs where shipping is indicated for Asset type Facility.</td>
+</tr>
+<tr>
+<td align="left">intAssetParentID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely identifies the parent of Asset.</td>
+</tr>
+<tr>
+<td align="left">intAccountID</td>
+<td align="left">Integer</td>
+<td>An integer unitquely defining the Account.</td>
+</tr>
+<tr>
+<td align="left">intChargeDepartmentID</td>
+<td align="left">Integer</td>
+<td>An integer uniquely defining the Charge Department</td>
+</tr>
+<tr>
+<td align="left">intSuperCategorySysCode</td>
+<td align="left">Integer</td>
+<td>Asset Category SysCode for Region or a Site</td>
+</tr>
+<tr>
+<td align="left">strBarcode</td>
+<td align="left">Integer</td>
+<td>For equipment or tools, this field can be used to store the bar code's value of the asset.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Data example </li>
+</ul>
+<pre><code class="json">{
+    &quot;strFullName&quot;: &quot;strFullName of Asset&quot;,
+    &quot;strDescription&quot;: &quot;Asset_Desc_Name&quot;,
+    &quot;strMake&quot;: &quot;Asset_Make_Name&quot;,
+    &quot;strModel&quot;: &quot;Asset_Model_Name&quot;,
+    &quot;qtyStockCount&quot;: 4
+    ... ...
+}
+</code></pre>
+
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example</li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Asset added successfully!&quot;,
+    &quot;data&quot;: {id: &quot;4rt8a89c24753232419483c&quot;}
+    }
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example</li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;strFullName is required&quot;
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;update failed&quot;
+}
+</code></pre>
+
+<h1 id="get-all-asset-list">Get all asset list</h1>
+<p>Get the all registered asset list.</p>
+<p><strong>URL</strong> : <code>/api/assets</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
+<p><strong> Success Response: </strong></p>
+<p><strong> Code </strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Asset list found!&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
+            &quot;strName&quot;: &quot;strName&quot;,
+            &quot;strDescription&quot;: &quot;strDescription&quot;,
+            &quot;strMake&quot;: &quot;strMake&quot;,
+            &quot;strModel&quot;: &quot;strModel&quot;,
+            &quot;qtyMinStockCount&quot;: 23,
+            &quot;strCity&quot;: &quot;strCity&quot;,
+            &quot;strShippingTerms&quot;: &quot;strShippingTerms&quot;,
+            &quot;strAddress&quot;: &quot;strAddress&quot;,
+            &quot;strNotes&quot;: &quot;&quot;,
+            &quot;strProvince&quot;: &quot;&quot;,
+            &quot;intCountryID&quot;: 45,
+            &quot;strInventoryCode&quot;: &quot;&quot;,
+            &quot;qtyStockCount&quot;: 11,
+            &quot;intSiteID&quot;: 329,
+            &quot;strRow&quot;: &quot;&quot;,
+            &quot;strMASourceProduct&quot;: &quot;&quot;,
+            &quot;strAisle&quot;: &quot;&quot;,
+            &quot;strBinNumber&quot;: &quot;&quot;,
+            &quot;intCategoryID&quot;: 32,
+            &quot;strPostalCode&quot;: &quot;&quot;,
+            &quot;strSerialNumber&quot;: &quot;&quot;,
+            &quot;strCode&quot;: &quot;&quot;,
+            &quot;dblLatitude&quot;: 0.114573,
+            &quot;dblLongitude&quot;: 4.2587,
+            &quot;strUnspcCode&quot;: &quot;&quot;,
+            &quot;dblLastPrice&quot;: 4.5,
+            &quot;bolIsBillToFacility&quot;: false,
+            &quot;intAssetLocationID&quot;: 886,
+            &quot;bolIsOnline&quot;: false,
+            &quot;bolIsShippingOrReceivingFacility&quot;: false,
+            &quot;strQuotingTerms&quot;: &quot;&quot;,
+            &quot;intAssetParentID&quot;: null,
+            &quot;intAccountID&quot;: null,
+            &quot;intChargeDepartmentID&quot;: null,
+            &quot;intSuperCategorySysCode&quot;: null,
+            &quot;strBarcode&quot;: &quot;&quot;,
+            &quot;__v&quot;: 0
+        },
+        ...
+    ]
+}
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;
+}
+</code></pre>
+
+<h1 id="update-asset">Update Asset</h1>
+<p>Update the Asset by Id</p>
+<p><strong>URL</strong> : <code>/api/assets/:uid</code></p>
+<p><strong>Method</strong> : <code>PUT</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the asset.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strName</td>
+<td align="left">String</td>
+<td align="left">Display name of the asset.</td>
+</tr>
+<tr>
+<td align="left">strDescription</td>
+<td align="left">String</td>
+<td align="left">A short text describing the asset.</td>
+</tr>
+<tr>
+<td align="left">strMake</td>
+<td align="left">String</td>
+<td align="left">For equipment or tools, this field can be used to store the brand's name of the asset.</td>
+</tr>
+<tr>
+<td align="left">strMake</td>
+<td align="left">String</td>
+<td align="left">For equipment or tools, this field can be used to store the brand's name of the asset.</td>
+</tr>
+<tr>
+<td align="left">strModel</td>
+<td align="left">String</td>
+<td align="left">For equipment or tools, this field can be used to store the model's name of the asset.</td>
+</tr>
+<tr>
+<td align="left">qtyMinStockCount</td>
+<td align="left">integer</td>
+<td align="left">Mininum stock count for the asset.</td>
+</tr>
+<tr>
+<td align="left">strCity</td>
+<td align="left">String</td>
+<td align="left">The city the asset is located into.</td>
+</tr>
+<tr>
+<td align="left">strShippingTerms</td>
+<td align="left">String</td>
+<td align="left">This field can be used to add comments about the shipping terms of the asset. For example : <code>"Item is heavier than 20kg and must be delivered before 10AM."</code></td>
+</tr>
+<tr>
+<td align="left">strAddress</td>
+<td align="left">String</td>
+<td align="left">Street number and street name of the address the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">strNotes</td>
+<td align="left">String</td>
+<td align="left">This field can be used to store additional details about the asset like the name of its supplier, a voltage range or dimensions for example.</td>
+</tr>
+<tr>
+<td align="left">strProvince</td>
+<td align="left">String</td>
+<td align="left">Code or full name of the province the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">intCountryID</td>
+<td align="left">integer</td>
+<td align="left">The ID of the country the asset is located at. For example : <code>124</code> for Canada or <code>840</code> for United States of America. For getting all possible values, please refer to the Country section.</td>
+</tr>
+<tr>
+<td align="left">strInventoryCode</td>
+<td align="left">String</td>
+<td align="left">This field can be used to store an inventory code for the asset.</td>
+</tr>
+<tr>
+<td align="left">qtyStockCount</td>
+<td align="left">Integer</td>
+<td align="left">Indicates the current stock count for the asset.</td>
+</tr>
+<tr>
+<td align="left">intSiteID</td>
+<td align="left">Integer</td>
+<td align="left">For multi-sites tenants, the ID of the site where the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">strRow</td>
+<td align="left">String</td>
+<td align="left">The row where the asset is located at in a facility.</td>
+</tr>
+<tr>
+<td align="left">strMASourceProduct</td>
+<td align="left">string</td>
+<td align="left">A JSON formatted string giving details about an asset coming from MA Source.</td>
+</tr>
+<tr>
+<td align="left">strAisle</td>
+<td align="left">string</td>
+<td align="left">The aisle where the asset is located at in a facility.</td>
+</tr>
+<tr>
+<td align="left">strBinNumber</td>
+<td align="left">string</td>
+<td align="left">The number of the bin where the asset is stored.</td>
+</tr>
+<tr>
+<td align="left">intCategoryID</td>
+<td align="left">Integer</td>
+<td align="left">The ID of the category the asset is directly attached to.</td>
+</tr>
+<tr>
+<td align="left">strPostalCode</td>
+<td align="left">string</td>
+<td align="left">The postal code of the address the asset is located at.</td>
+</tr>
+<tr>
+<td align="left">strSerialNumber</td>
+<td align="left">string</td>
+<td align="left">This field can be used to store the serial number of the asset.</td>
+</tr>
+<tr>
+<td align="left">strCode</td>
+<td align="left">string</td>
+<td align="left">This field can be used to define a code associated with the asset.</td>
+</tr>
+<tr>
+<td align="left">dblLatitude</td>
+<td align="left">Double</td>
+<td align="left">The latitude of the geographic location of the asset.</td>
+</tr>
+<tr>
+<td align="left">dblLongitude</td>
+<td align="left">Double</td>
+<td align="left">The longitude of the geographic location of the asset.</td>
+</tr>
+<tr>
+<td align="left">strUnspcCode</td>
+<td align="left">String</td>
+<td align="left">This field can be used to store the United Nations Standard Products and Services Code of the asset.</td>
+</tr>
+<tr>
+<td align="left">dblLastPrice</td>
+<td align="left">Double</td>
+<td align="left">Last Purchase Price Per Unit on Asset</td>
+</tr>
+<tr>
+<td align="left">bolIsBillToFacility</td>
+<td align="left">Boolean</td>
+<td align="left">If set to true, indicates that invoices for assets (usually parts/supplies) should be sent to this facility.</td>
+</tr>
+<tr>
+<td align="left">intAssetLocationID</td>
+<td align="left">Integer</td>
+<td align="left">An integer uniquely defining the location of asset. Refers to Asset with an asset category as Locations And Facilities</td>
+</tr>
+<tr>
+<td align="left">bolIsOnline</td>
+<td align="left">Boolean</td>
+<td align="left">A boolean value representing if the related Asset is online or offline, 1 or 0 respectively.</td>
+</tr>
+<tr>
+<td align="left">bolIsShippingOrReceivingFacility</td>
+<td align="left">Boolean</td>
+<td align="left">A boolean that identifies whether a facility ships or receives assets (usually parts/supplies).</td>
+</tr>
+<tr>
+<td align="left">strQuotingTerms</td>
+<td align="left">Boolean</td>
+<td align="left">Quoting terms that are automatically added to RFQs where shipping is indicated for Asset type Facility.</td>
+</tr>
+<tr>
+<td align="left">intAssetParentID</td>
+<td align="left">Integer</td>
+<td align="left">An integer that uniquely identifies the parent of Asset.</td>
+</tr>
+<tr>
+<td align="left">intAccountID</td>
+<td align="left">Integer</td>
+<td align="left">An integer unitquely defining the Account.</td>
+</tr>
+<tr>
+<td align="left">intChargeDepartmentID</td>
+<td align="left">Integer</td>
+<td align="left">An integer uniquely defining the Charge Department</td>
+</tr>
+<tr>
+<td align="left">intSuperCategorySysCode</td>
+<td align="left">Integer</td>
+<td align="left">Asset Category SysCode for Region or a Site</td>
+</tr>
+<tr>
+<td align="left">strBarcode</td>
+<td align="left">Integer</td>
+<td align="left">For equipment or tools, this field can be used to store the bar code's value of the asset.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>*Data example </li>
+</ul>
+<pre><code class="json">{
+    &quot;strFullName&quot;: &quot;strFullName of Asset&quot;,
+    &quot;strDescription&quot;: &quot;Asset_Desc_Name&quot;,
+    &quot;strMake&quot;: &quot;Asset_Make_Name&quot;,
+    &quot;strModel&quot;: &quot;Asset_Model_Name&quot;,
+    &quot;qtyStockCount&quot;: 4
+    ... ...
+}
+</code></pre>
+
+<p><strong> Success Response </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Asset updated successfully!&quot;
+    }
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;update failed&quot;
+}
+</code></pre>
+
+<h1 id="get-single-asset-by-id">Get Single Asset By Id</h1>
+<p>Get a single Asset by id if current asset was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/assets/:assetid</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the asset.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;&quot;Asset found!&quot;,
+    &quot;data&quot;: 
+        {
+            &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
+            &quot;strName&quot;: &quot;strName&quot;,
+            &quot;strDescription&quot;: &quot;strDescription&quot;,
+            &quot;strMake&quot;: &quot;strMake&quot;,
+            &quot;strModel&quot;: &quot;strModel&quot;,
+            &quot;qtyMinStockCount&quot;: 23,
+            &quot;strCity&quot;: &quot;strCity&quot;,
+            &quot;strShippingTerms&quot;: &quot;strShippingTerms&quot;,
+            &quot;strAddress&quot;: &quot;strAddress&quot;,
+            &quot;strNotes&quot;: &quot;&quot;,
+            &quot;strProvince&quot;: &quot;&quot;,
+            &quot;intCountryID&quot;: 45,
+            &quot;strInventoryCode&quot;: &quot;&quot;,
+            &quot;qtyStockCount&quot;: 11,
+            &quot;intSiteID&quot;: 329,
+            &quot;strRow&quot;: &quot;&quot;,
+            &quot;strMASourceProduct&quot;: &quot;&quot;,
+            &quot;strAisle&quot;: &quot;&quot;,
+            &quot;strBinNumber&quot;: &quot;&quot;,
+            &quot;intCategoryID&quot;: 32,
+            &quot;strPostalCode&quot;: &quot;&quot;,
+            &quot;strSerialNumber&quot;: &quot;&quot;,
+            &quot;strCode&quot;: &quot;&quot;,
+            &quot;dblLatitude&quot;: 0.114573,
+            &quot;dblLongitude&quot;: 4.2587,
+            &quot;strUnspcCode&quot;: &quot;&quot;,
+            &quot;dblLastPrice&quot;: 4.5,
+            &quot;bolIsBillToFacility&quot;: false,
+            &quot;intAssetLocationID&quot;: 886,
+            &quot;bolIsOnline&quot;: false,
+            &quot;bolIsShippingOrReceivingFacility&quot;: false,
+            &quot;strQuotingTerms&quot;: &quot;&quot;,
+            &quot;intAssetParentID&quot;: null,
+            &quot;intAccountID&quot;: null,
+            &quot;intChargeDepartmentID&quot;: null,
+            &quot;intSuperCategorySysCode&quot;: null,
+            &quot;strBarcode&quot;: &quot;&quot;,
+            &quot;__v&quot;: 0
+        }
+}
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong> Or </strong></p>
+<p><strong>Condition</strong> : If asset does not exist on server.</p>
+<p><strong>Code</strong> : <code>404 Not Found</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Asset not found&quot;, 
+   &quot;data&quot;:null
+}
+</code></pre>
+
+<h1 id="delete-asset">Delete  Asset</h1>
+<p>Delete the Asset by Id</p>
+<p><strong>URL</strong> : <code>/api/assets/:assetid</code></p>
+<p><strong>Method</strong> : <code>DELETE</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the asset.</p>
+<p><strong> Success Response </strong>
+<strong>Code</strong> : <code>200 success</code> </p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Asset deleted successfully!&quot;,
+    data: null
+}
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If there was no asset available to delete.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Delete failed&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../AssetBusiness/index.html" class="btn btn-neutral float-right" title="AssetBusiness">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Account/index.html" class="btn btn-neutral" title="Account"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Account/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../AssetBusiness/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-12-02 04:46:48
+-->

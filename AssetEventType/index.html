@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>AssetEventType - CMMS Api Doc</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "AssetEventType";
+    var mkdocs_page_input_path = "AssetEventType\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../Account/index.html" class="icon icon-home"> CMMS Api Doc</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Account/index.html">Account</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Asset/index.html">Asset</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEvent/index.html">AssetEvent</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">AssetEventType</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-asseteventtype">Create AssetEventType</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-asseteventtype-list">Get all AssetEventType list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-asseteventtype-by-id">Get Single AssetEventType By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-asseteventtype">Update AssetEventType</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-asseteventtype">Delete AssetEventType</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Business/index.html">Business</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../Account/index.html">CMMS Api Doc</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../Account/index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>AssetEventType</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="create-asseteventtype">Create AssetEventType</h1>
+<p>This object is used to represent the different types of events that can occur to an asset. The event types are defined by each tenant.</p>
+<p>Create an AssetEventType if  AssetEventType does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/asseteventtype</code></p>
+<p><strong>Method</strong> : <code>POST</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strEventCode</td>
+<td align="left">String</td>
+<td>A string that represents an event code.</td>
+</tr>
+<tr>
+<td align="left">strEventDescription</td>
+<td align="left">String</td>
+<td>A string that represents an event description.</td>
+</tr>
+<tr>
+<td align="left">strEventName</td>
+<td align="left">String</td>
+<td>A string that represents an event name.</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Success Response </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Created successfully!&quot;,
+    &quot;data&quot;: {id: &quot;57&quot;}
+    }
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Create failed&quot;
+}
+</code></pre>
+
+<h1 id="get-all-asseteventtype-list">Get all AssetEventType list</h1>
+<p>Get the all registered AssetEventType list.</p>
+<p><strong>URL</strong> : <code>/api/asseteventtype</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<p><strong>Resonse example:</strong></p>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 47,
+            &quot;strEventCode&quot;: &quot;AssetEventType_Code_Name&quot;,
+            &quot;strEventDescription&quot;: &quot;AssetEventType_Desc_Name&quot;
+            &quot;__v&quot;: 0
+        },
+        ...
+    ]
+}
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;
+}
+</code></pre>
+
+<h1 id="get-single-asseteventtype-by-id">Get Single AssetEventType By Id</h1>
+<p>Get a single AssetEventType by id if current AssetEventType was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/asseteventtype/:Id</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the AssetEventType.</p>
+<p><strong> Success Response </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Workorder found!&quot;,
+    &quot;data&quot;: 
+        {
+            &quot;id&quot;: 47,
+            &quot;strEventCode&quot;: &quot;AssetEventType_Code_Name&quot;,
+            &quot;strEventDescription&quot;: &quot;AssetEventType_Desc_Name&quot;
+        }
+}
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong> Or </strong></p>
+<p><strong>Condition</strong> : If AssetEventType does not exist on server.</p>
+<p><strong>Code</strong> : <code>404 Not Found</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Not found&quot;, 
+   &quot;data&quot;:null
+}
+</code></pre>
+
+<h1 id="update-asseteventtype">Update AssetEventType</h1>
+<p>Update the AssetEventType by Id</p>
+<p><strong>URL</strong> : <code>/api/asseteventtype/:Id</code></p>
+<p><strong>Method</strong> : <code>PUT</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorder.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strEventCode</td>
+<td align="left">String</td>
+<td>A string that represents an event code.</td>
+</tr>
+<tr>
+<td align="left">strEventDescription</td>
+<td align="left">String</td>
+<td>A string that represents an event description.</td>
+</tr>
+<tr>
+<td align="left">strEventName</td>
+<td align="left">String</td>
+<td>A string that represents an event name.</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Updated successfully!&quot;
+    }
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example</li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Update failed&quot;
+}
+</code></pre>
+
+<h1 id="delete-asseteventtype">Delete AssetEventType</h1>
+<p>Delete a AssetEventType by Id</p>
+<p><strong>URL</strong> : <code>/api/asseteventtype/:Id</code></p>
+<p><strong>Method</strong> : <code>DELETE</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the AssetEventType.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Deleted successfully!&quot;,
+    data: null
+}
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If there was no asset available to delete.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Delete failed&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Business/index.html" class="btn btn-neutral float-right" title="Business">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../AssetEvent/index.html" class="btn btn-neutral" title="AssetEvent"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../AssetEvent/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Business/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-12-02 04:46:48
+-->
