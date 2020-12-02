@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>AssetCategory - CMMS Api Doc</title>
+  <title>WorkOrderTask - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "AssetCategory";
-    var mkdocs_page_input_path = "AssetCategory\\index.md";
+    var mkdocs_page_name = "WorkOrderTask";
+    var mkdocs_page_input_path = "WorkOrderTask\\index.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -63,27 +63,9 @@
     <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">AssetCategory</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#create-assetcategory">Create AssetCategory</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-all-assetcategory-list">Get all AssetCategory list</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-single-assetcategory-by-id">Get Single AssetCategory By Id</a></li>
-    
-
-    <li class="toctree-l2"><a href="#update-assetcategory">Update AssetCategory</a></li>
-    
-
-    <li class="toctree-l2"><a href="#delete-assetcategory">Delete AssetCategory</a></li>
-    
-
-    </ul>
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -146,9 +128,27 @@
     <a class="" href="../WorkOrderStatus/index.html">WorkOrderStatus</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../WorkOrderTask/index.html">WorkOrderTask</a>
+    <a class="current" href="index.html">WorkOrderTask</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-workordertask">Create WorkOrderTask</a></li>
+    
+
+    <li class="toctree-l2"><a href="#read-all-workordertask-list">Read all WorkOrderTask list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-workordertask-by-id">Get Single WorkOrderTask By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-workordertask">Update WorkOrderTask</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-workordertask">Delete WorkOrderTask</a></li>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -173,7 +173,7 @@
     
       
     
-    <li>AssetCategory</li>
+    <li>WorkOrderTask</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -183,10 +183,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-assetcategory">Create AssetCategory</h1>
-<p>This object is used for representing a category of assets. Main categories are equipment, tools and facilities but more categories can be created under those root categories.</p>
-<p>Create an AssetCategory if  AssetCategory does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/assetcategory</code></p>
+                <h1 id="create-workordertask">Create WorkOrderTask</h1>
+<p>A work order consists of a set of tasks that must be executed by some assigned users on a set of assets. This object represents those tasks.</p>
+<p>Create a WorkOrderTask if  WorkOrderTask does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/workordertask</code></p>
 <p><strong>Method</strong> : <code>POST</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -200,44 +200,94 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">intParentID</td>
+<td align="left">intWorkOrderID</td>
 <td align="left">Integer</td>
-<td>The ID of the parent category this category is directly attached to.</td>
+<td>The ID of the work order the task is part of. For getting possible values, please refer to the WorkOrder section.</td>
 </tr>
 <tr>
-<td align="left">strName</td>
+<td align="left">intTaskType</td>
+<td align="left">Integer</td>
+<td>An integer representing the type of the task. Possible values are : 0 for General, 1 for Text Result, 2 for Meter Reading, and 3 for Inspection Task.</td>
+</tr>
+<tr>
+<td align="left">strResult</td>
 <td align="left">String</td>
-<td>A display name for the category.</td>
+<td>In case of a Text Result task, a text explaining the output of the task.</td>
 </tr>
 <tr>
-<td align="left">intSysCode</td>
+<td align="left">intAssetID</td>
 <td align="left">Integer</td>
-<td>System codes are used to define root categories with a significant meaning for the CMMS. There should be only one category with each system code for a given tenant. Possible values are : 0 for Assets, 1 for Locations And Facilities, 2 for Equipment, 3 for Tools, 4 for Parts And Supplies, 5 for Inventory Storage, 6 for Buildings, 7 for Plants, 10 for Regions and 11 for Rotating Spares.</td>
+<td>The ID of the asset the task should be executed on. For getting possible values, please refer to the Asset section.</td>
 </tr>
 <tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
+<td align="left">intOrder</td>
+<td align="left">Integer</td>
+<td>An integer used for ordering the tasks inside the work order.</td>
 </tr>
 <tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
+<td align="left">dtmStartDate</td>
+<td align="left">timestamp</td>
+<td>The date and time when the task is scheduled to be worked on.</td>
+</tr>
+<tr>
+<td align="left">dtmDateCompleted</td>
+<td align="left">timestamp</td>
+<td>The date and time when the task was completed.</td>
+</tr>
+<tr>
+<td align="left">intCompletedByUserID</td>
+<td align="left">Integer</td>
+<td>The ID of the user who competed the task. For getting possible values, please refer to the User section.</td>
+</tr>
+<tr>
+<td align="left">intAssignedToUserID</td>
+<td align="left">Integer</td>
+<td>The ID of the user the task is assigned to. For getting possible values, please refer to the User section.</td>
+</tr>
+<tr>
+<td align="left">dblTimeSpentHours</td>
+<td align="left">Double</td>
+<td>The actual hours that were spent on the task.</td>
+</tr>
+<tr>
+<td align="left">intMeterReadingUnitID</td>
+<td align="left">Double</td>
+<td>In case of a Meter Reading task, the ID of the unit used for the meter reading. For getting all possible values, please refer to the MeterReadingUnit section.</td>
+</tr>
+<tr>
+<td align="left">strDescription</td>
+<td align="left">String</td>
+<td>A short description of the task itself.</td>
+</tr>
+<tr>
+<td align="left">strTaskNotesCompletion</td>
+<td align="left">String</td>
+<td>This field can be used to store some notes upon the completion of the task.</td>
+</tr>
+<tr>
+<td align="left">intTaskGroupControlID</td>
+<td align="left">Integer</td>
+<td>An integer representing the id of the task group.</td>
+</tr>
+<tr>
+<td align="left">intParentWorkOrderTaskID</td>
+<td align="left">Integer</td>
+<td>An integer representing the id of the parent work order task.</td>
 </tr>
 </tbody>
 </table>
-<p><strong> Success Response:</strong></p>
+<p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
    &quot;msg&quot;: &quot;Created successfully!&quot;,
-    &quot;data&quot;: {id: &quot;4rt8a89c24753232419483c&quot;}
+    &quot;data&quot;: {id: &quot;12&quot;}
     }
 </code></pre>
 
-<p><strong> Error Responses </strong></p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -261,18 +311,13 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;strName is required&quot;
-}
-</code></pre>
-
-<pre><code class="json">{
     &quot;msg&quot;: &quot;Create failed&quot;
 }
 </code></pre>
 
-<h1 id="get-all-assetcategory-list">Get all AssetCategory list</h1>
-<p>Get the all registered AssetCategory list.</p>
-<p><strong>URL</strong> : <code>/api/assetcategory</code></p>
+<h1 id="read-all-workordertask-list">Read all WorkOrderTask list</h1>
+<p>Get the all registered WorkOrderTask list.</p>
+<p><strong>URL</strong> : <code>/api/workordertask</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
@@ -285,11 +330,14 @@
     &quot;msg&quot;: &quot;Found!&quot;,
     &quot;data&quot;: [
         {
-            &quot;_id&quot;: &quot;5f6a6f90d9741d152c754178&quot;,
-            &quot;intParentID&quot;: 11,
-            &quot;strName&quot;: &quot;String&quot;,
-            &quot;intSysCode&quot;: 3,
-            &quot;bolOverrideRules&quot;:true
+            &quot;_id&quot;: &quot;11&quot;,
+           &quot;intWorkOrderID&quot;: 1234,
+            &quot;dtmDateCompleted&quot;: 2020-11-26T09:00:36.285+00:00, 
+            &quot;intCompletedByUserID&quot;: 9876,
+            &quot;dblTimeSpentHours&quot;: 4,
+            &quot;intMeterReadingUnitID&quot;: 9010,
+            &quot;strTaskNotesCompletion&quot;: &quot;The meter reading is over 9000&quot;,
+            ...
             &quot;__v&quot;: 0
         },
         ...
@@ -297,7 +345,7 @@
 }
 </code></pre>
 
-<p><strong> Error Responses: </strong> </p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -325,14 +373,14 @@
 }
 </code></pre>
 
-<h1 id="get-single-assetcategory-by-id">Get Single AssetCategory By Id</h1>
-<p>Get a single AssetCategory by id if current AssetCategory was registered on it.</p>
-<p><strong>URL</strong> : <code>/api/assetcategory/:Id</code></p>
+<h1 id="get-single-workordertask-by-id">Get Single WorkOrderTask By Id</h1>
+<p>Get a single WorkOrderTask by id if current WorkOrderTask was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/workordertask/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the assetcategory.</p>
-<p><strong> Success Response </strong></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the WorkOrderTask.</p>
+<p><strong> Success Response : </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
@@ -341,16 +389,20 @@
     &quot;msg&quot;: &quot;Found!&quot;,
     &quot;data&quot;: 
         {
-            &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
-            &quot;intParentID&quot;:&quot;Integer&quot;,
-            &quot;strName&quot;:&quot;String&quot;,
-            &quot;intSysCode&quot;:3,
-            &quot;bolOverrideRules&quot;:true
+            &quot;_id&quot;: 11,
+            &quot;intWorkOrderID&quot;: 1234,
+            &quot;dtmDateCompleted&quot;: 2020-11-26T09:00:36.285+00:00, 
+            &quot;intCompletedByUserID&quot;: 9876,
+            &quot;dblTimeSpentHours&quot;: 4,
+            &quot;intMeterReadingUnitID&quot;: 9010,
+            &quot;strTaskNotesCompletion&quot;: &quot;The meter reading is over 9000&quot;,
+            ...
+
         }
 }
 </code></pre>
 
-<p><strong> Error Responses </strong></p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -369,7 +421,7 @@
 </code></pre>
 
 <p><strong> Or </strong></p>
-<p><strong>Condition</strong> : If AssetCategory does not exist on server.</p>
+<p><strong>Condition</strong> : If workordertask does not exist on server.</p>
 <p><strong>Code</strong> : <code>404 Not Found</code></p>
 <ul>
 <li>Content example </li>
@@ -380,13 +432,13 @@
 }
 </code></pre>
 
-<h1 id="update-assetcategory">Update AssetCategory</h1>
-<p>Update the AssetCategory by Id</p>
-<p><strong>URL</strong> : <code>/api/assetcategory/:Id</code></p>
+<h1 id="update-workordertask">Update WorkOrderTask</h1>
+<p>Update the WorkOrderTask by Id</p>
+<p><strong>URL</strong> : <code>/api/workordertask/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the AssetCategory.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the WorkOrderTask.</p>
 <table>
 <thead>
 <tr>
@@ -397,33 +449,83 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">intParentID</td>
+<td align="left">intWorkOrderID</td>
 <td align="left">Integer</td>
-<td>The ID of the parent category this category is directly attached to.</td>
+<td>The ID of the work order the task is part of. For getting possible values, please refer to the WorkOrder section.</td>
 </tr>
 <tr>
-<td align="left">strName</td>
+<td align="left">intTaskType</td>
+<td align="left">Integer</td>
+<td>An integer representing the type of the task. Possible values are : 0 for General, 1 for Text Result, 2 for Meter Reading, and 3 for Inspection Task.</td>
+</tr>
+<tr>
+<td align="left">strResult</td>
 <td align="left">String</td>
-<td>A display name for the category.</td>
+<td>In case of a Text Result task, a text explaining the output of the task.</td>
 </tr>
 <tr>
-<td align="left">intSysCode</td>
+<td align="left">intAssetID</td>
 <td align="left">Integer</td>
-<td>System codes are used to define root categories with a significant meaning for the CMMS. There should be only one category with each system code for a given tenant. Possible values are : 0 for Assets, 1 for Locations And Facilities, 2 for Equipment, 3 for Tools, 4 for Parts And Supplies, 5 for Inventory Storage, 6 for Buildings, 7 for Plants, 10 for Regions and 11 for Rotating Spares.</td>
+<td>The ID of the asset the task should be executed on. For getting possible values, please refer to the Asset section.</td>
 </tr>
 <tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
+<td align="left">intOrder</td>
+<td align="left">Integer</td>
+<td>An integer used for ordering the tasks inside the work order.</td>
 </tr>
 <tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
+<td align="left">dtmStartDate</td>
+<td align="left">timestamp</td>
+<td>The date and time when the task is scheduled to be worked on.</td>
+</tr>
+<tr>
+<td align="left">dtmDateCompleted</td>
+<td align="left">timestamp</td>
+<td>The date and time when the task was completed.</td>
+</tr>
+<tr>
+<td align="left">intCompletedByUserID</td>
+<td align="left">Integer</td>
+<td>The ID of the user who competed the task. For getting possible values, please refer to the User section.</td>
+</tr>
+<tr>
+<td align="left">intAssignedToUserID</td>
+<td align="left">Integer</td>
+<td>The ID of the user the task is assigned to. For getting possible values, please refer to the User section.</td>
+</tr>
+<tr>
+<td align="left">dblTimeSpentHours</td>
+<td align="left">Double</td>
+<td>The actual hours that were spent on the task.</td>
+</tr>
+<tr>
+<td align="left">intMeterReadingUnitID</td>
+<td align="left">Double</td>
+<td>In case of a Meter Reading task, the ID of the unit used for the meter reading. For getting all possible values, please refer to the MeterReadingUnit section.</td>
+</tr>
+<tr>
+<td align="left">strDescription</td>
+<td align="left">String</td>
+<td>A short description of the task itself.</td>
+</tr>
+<tr>
+<td align="left">strTaskNotesCompletion</td>
+<td align="left">String</td>
+<td>This field can be used to store some notes upon the completion of the task.</td>
+</tr>
+<tr>
+<td align="left">intTaskGroupControlID</td>
+<td align="left">Integer</td>
+<td>An integer representing the id of the task group.</td>
+</tr>
+<tr>
+<td align="left">intParentWorkOrderTaskID</td>
+<td align="left">Integer</td>
+<td>An integer representing the id of the parent work order task.</td>
 </tr>
 </tbody>
 </table>
-<p><strong> Success Response </strong></p>
+<p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
@@ -433,7 +535,7 @@
     }
 </code></pre>
 
-<p><strong> Error Responses:</strong> </p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -457,17 +559,17 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Update failed&quot;
+    &quot;msg&quot;: &quot;update failed&quot;
 }
 </code></pre>
 
-<h1 id="delete-assetcategory">Delete AssetCategory</h1>
-<p>Delete a AssetCategory by Id</p>
-<p><strong>URL</strong> : <code>/api/assetcategory/:Id</code></p>
+<h1 id="delete-workordertask">Delete WorkOrderTask</h1>
+<p>Delete a WorkOrderTask by Id</p>
+<p><strong>URL</strong> : <code>/api/workordertask/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the assetcategory.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the WorkOrderTask.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
@@ -479,7 +581,7 @@
 }
 </code></pre>
 
-<p><strong> Error Responses: </strong></p>
+<p><strong> Error Responses : </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -514,10 +616,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../AssetEvent/index.html" class="btn btn-neutral float-right" title="AssetEvent">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../AssetBusiness/index.html" class="btn btn-neutral" title="AssetBusiness"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../WorkOrderStatus/index.html" class="btn btn-neutral" title="WorkOrderStatus"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -543,10 +643,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../AssetBusiness/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../WorkOrderStatus/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../AssetEvent/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>AssetCategory - CMMS Api Doc</title>
+  <title>Project - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "AssetCategory";
-    var mkdocs_page_input_path = "AssetCategory\\index.md";
+    var mkdocs_page_name = "Project";
+    var mkdocs_page_input_path = "Project\\index.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -63,27 +63,9 @@
     <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">AssetCategory</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#create-assetcategory">Create AssetCategory</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-all-assetcategory-list">Get all AssetCategory list</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-single-assetcategory-by-id">Get Single AssetCategory By Id</a></li>
-    
-
-    <li class="toctree-l2"><a href="#update-assetcategory">Update AssetCategory</a></li>
-    
-
-    <li class="toctree-l2"><a href="#delete-assetcategory">Delete AssetCategory</a></li>
-    
-
-    </ul>
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -116,9 +98,27 @@
     <a class="" href="../MeterReadingUnit/index.html">MeterReadingUnit</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../Project/index.html">Project</a>
+    <a class="current" href="index.html">Project</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-project">Create Project</a></li>
+    
+
+    <li class="toctree-l2"><a href="#read-all-project-list">Read all Project list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-project-by-id">Get Single Project By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-project">Update Project</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-project">Delete Project</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -173,7 +173,7 @@
     
       
     
-    <li>AssetCategory</li>
+    <li>Project</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -183,10 +183,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-assetcategory">Create AssetCategory</h1>
-<p>This object is used for representing a category of assets. Main categories are equipment, tools and facilities but more categories can be created under those root categories.</p>
-<p>Create an AssetCategory if  AssetCategory does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/assetcategory</code></p>
+                <h1 id="create-project">Create Project</h1>
+<p>This object is used to represent a project. A project is used to group scheduled maintenances and work orders together.</p>
+<p>Create a Project if  Project does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/project</code></p>
 <p><strong>Method</strong> : <code>POST</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -194,50 +194,38 @@
 <thead>
 <tr>
 <th align="left">Param</th>
+<th align="left">Required</th>
 <th align="left">Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">intParentID</td>
+<td align="left">intSiteID</td>
+<td align="left">Yes</td>
 <td align="left">Integer</td>
-<td>The ID of the parent category this category is directly attached to.</td>
+<td>For multi-sites tenants, the ID of the site the project was created for. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
 </tr>
 <tr>
 <td align="left">strName</td>
-<td align="left">String</td>
-<td>A display name for the category.</td>
-</tr>
-<tr>
-<td align="left">intSysCode</td>
+<td align="left"></td>
 <td align="left">Integer</td>
-<td>System codes are used to define root categories with a significant meaning for the CMMS. There should be only one category with each system code for a given tenant. Possible values are : 0 for Assets, 1 for Locations And Facilities, 2 for Equipment, 3 for Tools, 4 for Parts And Supplies, 5 for Inventory Storage, 6 for Buildings, 7 for Plants, 10 for Regions and 11 for Rotating Spares.</td>
-</tr>
-<tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
-</tr>
-<tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
+<td>Display name of the project.</td>
 </tr>
 </tbody>
 </table>
-<p><strong> Success Response:</strong></p>
+<p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
-<li>Resonse example </li>
+<li>Resonse example</li>
 </ul>
 <pre><code class="json">{
    &quot;msg&quot;: &quot;Created successfully!&quot;,
-    &quot;data&quot;: {id: &quot;4rt8a89c24753232419483c&quot;}
+    &quot;data&quot;: {id: &quot;1&quot;}
     }
 </code></pre>
 
-<p><strong> Error Responses </strong></p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -261,7 +249,7 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;strName is required&quot;
+    &quot;msg&quot;: &quot;intSiteID is required&quot;
 }
 </code></pre>
 
@@ -270,9 +258,9 @@
 }
 </code></pre>
 
-<h1 id="get-all-assetcategory-list">Get all AssetCategory list</h1>
-<p>Get the all registered AssetCategory list.</p>
-<p><strong>URL</strong> : <code>/api/assetcategory</code></p>
+<h1 id="read-all-project-list">Read all Project list</h1>
+<p>Get the all registered Project list.</p>
+<p><strong>URL</strong> : <code>/api/project</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
@@ -285,11 +273,9 @@
     &quot;msg&quot;: &quot;Found!&quot;,
     &quot;data&quot;: [
         {
-            &quot;_id&quot;: &quot;5f6a6f90d9741d152c754178&quot;,
-            &quot;intParentID&quot;: 11,
-            &quot;strName&quot;: &quot;String&quot;,
-            &quot;intSysCode&quot;: 3,
-            &quot;bolOverrideRules&quot;:true
+            &quot;_id&quot;: &quot;1&quot;,
+            &quot;intSiteID&quot;: 2,
+            &quot;strName&quot;:&quot;String&quot;
             &quot;__v&quot;: 0
         },
         ...
@@ -297,7 +283,7 @@
 }
 </code></pre>
 
-<p><strong> Error Responses: </strong> </p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -325,14 +311,14 @@
 }
 </code></pre>
 
-<h1 id="get-single-assetcategory-by-id">Get Single AssetCategory By Id</h1>
-<p>Get a single AssetCategory by id if current AssetCategory was registered on it.</p>
-<p><strong>URL</strong> : <code>/api/assetcategory/:Id</code></p>
+<h1 id="get-single-project-by-id">Get Single Project By Id</h1>
+<p>Get a single Project by id if current Project was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the assetcategory.</p>
-<p><strong> Success Response </strong></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the project.</p>
+<p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
@@ -341,16 +327,14 @@
     &quot;msg&quot;: &quot;Found!&quot;,
     &quot;data&quot;: 
         {
-            &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
-            &quot;intParentID&quot;:&quot;Integer&quot;,
-            &quot;strName&quot;:&quot;String&quot;,
-            &quot;intSysCode&quot;:3,
-            &quot;bolOverrideRules&quot;:true
+            &quot;_id&quot;: &quot;3&quot;,
+            &quot;intSiteID&quot;:&quot;Integer&quot;,
+            &quot;strName&quot;:&quot;String&quot;
         }
 }
 </code></pre>
 
-<p><strong> Error Responses </strong></p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -380,50 +364,38 @@
 }
 </code></pre>
 
-<h1 id="update-assetcategory">Update AssetCategory</h1>
-<p>Update the AssetCategory by Id</p>
-<p><strong>URL</strong> : <code>/api/assetcategory/:Id</code></p>
+<h1 id="update-project">Update Project</h1>
+<p>Update the Project by Id</p>
+<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the AssetCategory.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the Project.</p>
 <table>
 <thead>
 <tr>
 <th align="left">Param</th>
+<th align="left">Required</th>
 <th align="left">Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">intParentID</td>
+<td align="left">intSiteID</td>
+<td align="left">Yes</td>
 <td align="left">Integer</td>
-<td>The ID of the parent category this category is directly attached to.</td>
+<td>For multi-sites tenants, the ID of the site the project was created for. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
 </tr>
 <tr>
 <td align="left">strName</td>
-<td align="left">String</td>
-<td>A display name for the category.</td>
-</tr>
-<tr>
-<td align="left">intSysCode</td>
+<td align="left"></td>
 <td align="left">Integer</td>
-<td>System codes are used to define root categories with a significant meaning for the CMMS. There should be only one category with each system code for a given tenant. Possible values are : 0 for Assets, 1 for Locations And Facilities, 2 for Equipment, 3 for Tools, 4 for Parts And Supplies, 5 for Inventory Storage, 6 for Buildings, 7 for Plants, 10 for Regions and 11 for Rotating Spares.</td>
-</tr>
-<tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
-</tr>
-<tr>
-<td align="left">bolOverrideRules</td>
-<td align="left">Boolean</td>
-<td>If set to true, indicates that the associated asset category overrides the rules set.</td>
+<td>Display name of the project.</td>
 </tr>
 </tbody>
 </table>
-<p><strong> Success Response </strong></p>
+<p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
@@ -433,7 +405,7 @@
     }
 </code></pre>
 
-<p><strong> Error Responses:</strong> </p>
+<p><strong> Error Responses: </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -461,13 +433,13 @@
 }
 </code></pre>
 
-<h1 id="delete-assetcategory">Delete AssetCategory</h1>
-<p>Delete a AssetCategory by Id</p>
-<p><strong>URL</strong> : <code>/api/assetcategory/:Id</code></p>
+<h1 id="delete-project">Delete Project</h1>
+<p>Delete a Project by Id</p>
+<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the assetcategory.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the Project.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
@@ -514,10 +486,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../AssetEvent/index.html" class="btn btn-neutral float-right" title="AssetEvent">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ScheduledMaintenance/index.html" class="btn btn-neutral float-right" title="ScheduledMaintenance">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../AssetBusiness/index.html" class="btn btn-neutral" title="AssetBusiness"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../MeterReadingUnit/index.html" class="btn btn-neutral" title="MeterReadingUnit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -543,10 +515,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../AssetBusiness/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../MeterReadingUnit/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../AssetEvent/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ScheduledMaintenance/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Create Business - CMMS Api Doc</title>
+  <title>Get Single WorkOrderTask By Id Api - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Create Business";
-    var mkdocs_page_input_path = "Business\\creat_Business_Api.md";
+    var mkdocs_page_name = "Get Single WorkOrderTask By Id Api";
+    var mkdocs_page_input_path = "WorkOrderTask\\get_WorkOrderTask_byId_Api.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -80,7 +80,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="index.html">Business</a>
+    <a class="" href="../Business/index.html">Business</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -130,7 +130,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../WorkOrderTask/index.html">WorkOrderTask</a>
+    <a class="" href="index.html">WorkOrderTask</a>
 	    </li>
           
         </ul>
@@ -155,7 +155,7 @@
     
       
     
-    <li>Create Business</li>
+    <li>Get Single WorkOrderTask By Id Api</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -165,106 +165,31 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-business">Create Business</h1>
-<p>A Business represents a particular Business within your CMMS. It contains information about the address of the Business, and the Business Classification, such as Agriculture, Aerospace/Airline, Automotive, Biotechnology, Chemical Processing, Computer, Data Centers, Defense, Education, Electronics, Energy and Utilities, Manufacturing, Software, Technology, and Telecommunications. 
-Create an AssetCategory if  AssetCategory does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/business</code></p>
-<p><strong>Method</strong> : <code>POST</code></p>
+                <h1 id="get-single-workordertask-by-id-api">Get Single WorkOrderTask By Id Api</h1>
+<p>Get a single WorkOrderTask by id if current WorkOrderTask was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/workordertask/:Id</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">strProvince</td>
-<td align="left">String</td>
-<td>A string that identifies the Province of the Business.</td>
-</tr>
-<tr>
-<td align="left">strPostalCode</td>
-<td align="left">String</td>
-<td>A string that identifies the Postal Code of the Business.</td>
-</tr>
-<tr>
-<td align="left">strTimezone</td>
-<td align="left">String</td>
-<td>A string that identifies the Time Zone of the Business.</td>
-</tr>
-<tr>
-<td align="left">strPrimaryEmail</td>
-<td align="left">String</td>
-<td>A string that identifies the Primary Email of the Business.</td>
-</tr>
-<tr>
-<td align="left">strName</td>
-<td align="left">String</td>
-<td>A string that identifies the Name of the Business.</td>
-</tr>
-<tr>
-<td align="left">strPhone</td>
-<td align="left">String</td>
-<td>A string that identifies the Phone Number of the Business.</td>
-</tr>
-<tr>
-<td align="left">strFax</td>
-<td align="left">String</td>
-<td>A string that identifies the Fax Number of the Business.</td>
-</tr>
-<tr>
-<td align="left">intCountryID</td>
-<td align="left">Integer</td>
-<td>An integer that uniquely identifies the Country of the Business (used in conjunction with the Country object).</td>
-</tr>
-<tr>
-<td align="left">strAddress</td>
-<td align="left">String</td>
-<td>A string that identifies the Address of the Business.</td>
-</tr>
-<tr>
-<td align="left">strPrimaryContact</td>
-<td align="left">String</td>
-<td>A string that identifies the Primary Contact of the Business.</td>
-</tr>
-<tr>
-<td align="left">strNotes</td>
-<td align="left">String</td>
-<td>A string that identifies Notes of the Business.</td>
-</tr>
-<tr>
-<td align="left">strPhone2</td>
-<td align="left">String</td>
-<td>An additional optional phone number of the Business.</td>
-</tr>
-<tr>
-<td align="left">strCode</td>
-<td align="left">String</td>
-<td>The code of the Business.</td>
-</tr>
-<tr>
-<td align="left">strCity</td>
-<td align="left">String</td>
-<td>The city of the Business.</td>
-</tr>
-<tr>
-<td align="left">strSecondaryEmail</td>
-<td align="left">String</td>
-<td>A string that identifies secondary email of the Business.</td>
-</tr>
-</tbody>
-</table>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the WorkOrderTask.</p>
 <h2 id="success-response">Success Response</h2>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <p><strong>Resonse example</strong></p>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Created successfully!&quot;,
-    &quot;data&quot;: {id: &quot;6&quot;}
-    }
+    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;data&quot;: 
+        {
+            &quot;_id&quot;: 11,
+            &quot;intWorkOrderID&quot;: 1234,
+            &quot;dtmDateCompleted&quot;: 2020-11-26T09:00:36.285+00:00, 
+            &quot;intCompletedByUserID&quot;: 9876,
+            &quot;dblTimeSpentHours&quot;: 4,
+            &quot;intMeterReadingUnitID&quot;: 9010,
+            &quot;strTaskNotesCompletion&quot;: &quot;The meter reading is over 9000&quot;,
+            ...
+
+        }
+}
 </code></pre>
 
 <h2 id="error-responses">Error Responses</h2>
@@ -283,11 +208,13 @@ Create an AssetCategory if  AssetCategory does not already exist.</p>
 }
 </code></pre>
 
-<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
-<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<h3 id="or">Or</h3>
+<p><strong>Condition</strong> : If workordertask does not exist on server.</p>
+<p><strong>Code</strong> : <code>404 Not Found</code></p>
 <p><strong>Content example</strong></p>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Create failed&quot;
+   &quot;msg&quot;: &quot;Not found&quot;, 
+   &quot;data&quot;:null
 }
 </code></pre>
               

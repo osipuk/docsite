@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>ScheduleTrigger - CMMS Api Doc</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ScheduleTrigger";
+    var mkdocs_page_input_path = "ScheduleTrigger\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> CMMS Api Doc</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Account</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Asset/index.html">Asset</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEvent/index.html">AssetEvent</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEventType/index.html">AssetEventType</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Business/index.html">Business</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ChargeDepartment/index.html">ChargeDepartment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MeterReading/index.html">MeterReading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MeterReadingUnit/index.html">MeterReadingUnit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Project/index.html">Project</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ScheduledMaintenance/index.html">ScheduledMaintenance</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">ScheduleTrigger</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-scheduletrigger">Create ScheduleTrigger</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-scheduletrigger-list">Get all ScheduleTrigger list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-scheduletrigger">Update ScheduleTrigger</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-scheduletrigger">Delete ScheduleTrigger</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../User/index.html">User</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrder/index.html">WorkOrder</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderStatus/index.html">WorkOrderStatus</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderTask/index.html">WorkOrderTask</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CMMS Api Doc</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>ScheduleTrigger</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="create-scheduletrigger">Create ScheduleTrigger</h1>
+<p>A ScheduleTrigger represents a trigger that is created on a ScheduledMaintenance for scheduling a WorkOrder. A WorkOrder can be scheduled for a ScheduledMaintenance when any of the ScheduleTriggers fire or when all of the ScheduleTriggers are fired depending on the configuration specified on ScheduledMaintenance.</p>
+<p>Create an ScheduleTrigger  if  ScheduleTrigger  does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/scheduletrigger</code></p>
+<p><strong>Method</strong> : <code>POST</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">bolTSWFriday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Friday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWMonday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Monday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWSaturday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Saturday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWSunday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Sunday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWThursday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Thursday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWTuesday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Tuesday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWWednesday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Wednesday.</td>
+</tr>
+<tr>
+<td align="left">strDatLogicHourly</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the hourly setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">strDatLogicDaily</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the daily setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">strDatLogicMonthly</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the monthly setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">strDatLogicYearly</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the yearly setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">dblLastMeterReading</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field identifies the last meter reading recorded.</td>
+</tr>
+<tr>
+<td align="left">dblRMeterReading</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the interval in which it should be triggered (Ex: Every 90 hours).</td>
+</tr>
+<tr>
+<td align="left">dblROMeterReading</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the value when it should be triggered (Ex: When Hours (h) Reading is greater than 10).</td>
+</tr>
+<tr>
+<td align="left">dblRREndBy</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the End By Reading configured for the trigger. If no End By is configured, it defaults to 0.</td>
+</tr>
+<tr>
+<td align="left">dblRRStart</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the Start At Reading configured for the trigger. If no Start At is configured, it defaults to 0.</td>
+</tr>
+<tr>
+<td align="left">dtmLastTriggered</td>
+<td align="left">timestamp</td>
+<td>The date and time which the trigger was triggered last.</td>
+</tr>
+<tr>
+<td align="left">intAssetEventTypeID</td>
+<td align="left">Integer</td>
+<td>For an Event trigger, this field specifies the ID of the AssetEventType associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intRMeterReadingUnitID</td>
+<td align="left">Integer</td>
+<td>For a Meter Reading trigger, this field specifies ID of MeterReadingUnit associated with the trigger when the trigger is configured for Every reading of the unit.</td>
+</tr>
+<tr>
+<td align="left">intROMeterReadingUnitID</td>
+<td align="left">Integer</td>
+<td>For a Meter Reading trigger, this field specifies ID of MeterReadingUnit associated with the trigger when the trigger is configured based on a condition.</td>
+</tr>
+<tr>
+<td align="left">intRREndAfter</td>
+<td align="left">Integer</td>
+<td>For Meter Reading trigger, it specifies the reading after which to stop the trigger.</td>
+</tr>
+<tr>
+<td align="left">intScheduledMaintenanceID</td>
+<td align="left">Integer</td>
+<td>The ID of the ScheduledMaintenance associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTREndAfter</td>
+<td align="left">Integer</td>
+<td>This field is used to determine after how many occurrences the trigger should be stopped.</td>
+</tr>
+<tr>
+<td align="left">intTSDEveryDays</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be daily, it denotes the daily rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSHEveryHours</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be hourly, it denotes the hourly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSMDayOfMonth</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be monthly, it denotes the day of the month associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSMEveryMonths</td>
+<td align="left">Integer</td>
+<td>For Time Schedule trigger that is configured to be monthly, it denotes the monthly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSWEveryWeeks</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be weekly, it denotes the weekly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSYDayOfMonth</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be yearly, it denotes the day of the month associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSYEveryYears</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be yearly, it denotes the yearly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSYMonthOfYear</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be yearly, it denotes the month of the year associated with the trigger. Do note that the months start at 0. For eg: The year starts at January (0) and ends with December (11).</td>
+</tr>
+<tr>
+<td align="left">strROType</td>
+<td align="left">String</td>
+<td>For a Meter Reading trigger, this field is the Trigger Meter (When) Comparison. It is set to l (less than), g (greater than), or empty if not meter reading based.</td>
+</tr>
+<tr>
+<td align="left">strRRType</td>
+<td align="left">String</td>
+<td>It is the Trigger Schedule No End Date. It is set to empty if not time based, n (no end date), b (has a end date).</td>
+</tr>
+<tr>
+<td align="left">strRType</td>
+<td align="left">String</td>
+<td>For a Meter Reading trigger, this field is the Trigger Meter Type. It is set to e (every), o (other), empty if not meter reading based.</td>
+</tr>
+<tr>
+<td align="left">strTRType</td>
+<td align="left">String</td>
+<td>It is the Trigger Reading End type. It is set to n (no end reading), b (end by reading).</td>
+</tr>
+<tr>
+<td align="left">strTSType</td>
+<td align="left">String</td>
+<td>It is the Trigger Schedule Type. It is set to h (hourly), d (daily), w (weekly), m (monthly), y (yearly).</td>
+</tr>
+<tr>
+<td align="left">strType</td>
+<td align="left">String</td>
+<td>This field denotes the type of the Schedule Trigger. It is set to t for Time Schedule trigger, r for Meter Reading Trigger and e for an Event Trigger.</td>
+</tr>
+<tr>
+<td align="left">strMrLogic</td>
+<td align="left">String</td>
+<td>For a Meter Reading trigger, this field is used to determine the logic of the schedule. It is set x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">bolMrByWOClosed</td>
+<td align="left">boolean</td>
+<td>If set to true, the Meter Reading trigger should check the reading when the WO is closed.</td>
+</tr>
+<tr>
+<td align="left">bolCreateWorkOrderOnStartDate</td>
+<td align="left">boolean</td>
+<td>If set to true, it indicates that a WorkOrder be created on the start date when the trigger is scheduled.</td>
+</tr>
+<tr>
+<td align="left">intAssetID</td>
+<td align="left">Integer</td>
+<td>Indicates the ID for an Asset associated with the ScheduledMaintenance that creates the trigger. For a Meter Reading trigger, this field needs to be populated with the Asset id of one of the ScheduledMaintenance Assets.</td>
+</tr>
+<tr>
+<td align="left">strScheduleDescription</td>
+<td align="left">String</td>
+<td>The description for the Schedule Trigger.</td>
+</tr>
+<tr>
+<td align="left">intTRTriggerTime</td>
+<td align="left">Integer</td>
+<td>For all the Time Schedule triggers except an hourly trigger, this field specifies time at which it will be triggered. It can have a value between 0 and 23.</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Created successfully!&quot;,
+    &quot;data&quot;: {id: &quot;71&quot;}
+    }
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Create failed&quot;
+}
+</code></pre>
+
+<h1 id="get-all-scheduletrigger-list">Get all ScheduleTrigger list</h1>
+<p>Get the all registered ScheduleTrigger list.</p>
+<p><strong>URL</strong> : <code>/api/scheduletrigger</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;_id&quot;: &quot;32&quot;,
+            &quot;strAssignedUserIds&quot;:&quot; 13 8 9 &quot;
+            &quot;intPriorityID&quot;: 4156,
+            &quot;intWorkOrderStatusID&quot;: 4,
+            &quot;strAssets&quot;:&quot;ASSET ABC (0010), ASSET DEF (0011)&quot;
+            &quot;intSiteID&quot;: 3345,
+             &quot;strAssignedUsers&quot;: &quot;John Doe, Samuel Smith&quot;,
+            &quot;intRequestedByUserID&quot;: 667, 
+            strEmailUserGuest:&quot;&quot;,
+            dtmDateCreated:&quot;&quot;,
+            strAssetIds:&quot; 9 78 675 &quot;,
+            dtmDateCompleted:&quot;&quot;,
+            intCompletedByUserID:555
+            ...
+            &quot;__v&quot;: 0
+        },
+        ...
+    ]
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;
+}
+</code></pre>
+
+<h1 id="update-scheduletrigger">Update ScheduleTrigger</h1>
+<p>Update the ScheduleTrigger by Id</p>
+<p><strong>URL</strong> : <code>/api/scheduletrigger/:Id</code></p>
+<p><strong>Method</strong> : <code>PUT</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduleTrigger.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">bolTSWFriday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Friday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWMonday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Monday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWSaturday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Saturday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWSunday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Sunday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWThursday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Thursday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWTuesday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Tuesday.</td>
+</tr>
+<tr>
+<td align="left">bolTSWWednesday</td>
+<td align="left">boolean</td>
+<td>If set to true, this field indicates that the Time Schedule trigger is configured to run weekly on every Wednesday.</td>
+</tr>
+<tr>
+<td align="left">strDatLogicHourly</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the hourly setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">strDatLogicDaily</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the daily setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">strDatLogicMonthly</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the monthly setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">strDatLogicYearly</td>
+<td align="left">String</td>
+<td>For a Time Schedule trigger, this field shows the logic of the yearly setting. It is set to x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">dblLastMeterReading</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field identifies the last meter reading recorded.</td>
+</tr>
+<tr>
+<td align="left">dblRMeterReading</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the interval in which it should be triggered (Ex: Every 90 hours).</td>
+</tr>
+<tr>
+<td align="left">dblROMeterReading</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the value when it should be triggered (Ex: When Hours (h) Reading is greater than 10).</td>
+</tr>
+<tr>
+<td align="left">dblRREndBy</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the End By Reading configured for the trigger. If no End By is configured, it defaults to 0.</td>
+</tr>
+<tr>
+<td align="left">dblRRStart</td>
+<td align="left">double</td>
+<td>For a Meter Reading trigger, this field specifies the Start At Reading configured for the trigger. If no Start At is configured, it defaults to 0.</td>
+</tr>
+<tr>
+<td align="left">dtmLastTriggered</td>
+<td align="left">timestamp</td>
+<td>The date and time which the trigger was triggered last.</td>
+</tr>
+<tr>
+<td align="left">intAssetEventTypeID</td>
+<td align="left">Integer</td>
+<td>For an Event trigger, this field specifies the ID of the AssetEventType associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intRMeterReadingUnitID</td>
+<td align="left">Integer</td>
+<td>For a Meter Reading trigger, this field specifies ID of MeterReadingUnit associated with the trigger when the trigger is configured for Every reading of the unit.</td>
+</tr>
+<tr>
+<td align="left">intROMeterReadingUnitID</td>
+<td align="left">Integer</td>
+<td>For a Meter Reading trigger, this field specifies ID of MeterReadingUnit associated with the trigger when the trigger is configured based on a condition.</td>
+</tr>
+<tr>
+<td align="left">intRREndAfter</td>
+<td align="left">Integer</td>
+<td>For Meter Reading trigger, it specifies the reading after which to stop the trigger.</td>
+</tr>
+<tr>
+<td align="left">intScheduledMaintenanceID</td>
+<td align="left">Integer</td>
+<td>The ID of the ScheduledMaintenance associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTREndAfter</td>
+<td align="left">Integer</td>
+<td>This field is used to determine after how many occurrences the trigger should be stopped.</td>
+</tr>
+<tr>
+<td align="left">intTSDEveryDays</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be daily, it denotes the daily rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSHEveryHours</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be hourly, it denotes the hourly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSMDayOfMonth</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be monthly, it denotes the day of the month associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSMEveryMonths</td>
+<td align="left">Integer</td>
+<td>For Time Schedule trigger that is configured to be monthly, it denotes the monthly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSWEveryWeeks</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be weekly, it denotes the weekly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSYDayOfMonth</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be yearly, it denotes the day of the month associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSYEveryYears</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be yearly, it denotes the yearly rate of repetition associated with the trigger.</td>
+</tr>
+<tr>
+<td align="left">intTSYMonthOfYear</td>
+<td align="left">Integer</td>
+<td>For a Time Schedule trigger that is configured to be yearly, it denotes the month of the year associated with the trigger. Do note that the months start at 0. For eg: The year starts at January (0) and ends with December (11).</td>
+</tr>
+<tr>
+<td align="left">strROType</td>
+<td align="left">String</td>
+<td>For a Meter Reading trigger, this field is the Trigger Meter (When) Comparison. It is set to l (less than), g (greater than), or empty if not meter reading based.</td>
+</tr>
+<tr>
+<td align="left">strRRType</td>
+<td align="left">String</td>
+<td>It is the Trigger Schedule No End Date. It is set to empty if not time based, n (no end date), b (has a end date).</td>
+</tr>
+<tr>
+<td align="left">strRType</td>
+<td align="left">String</td>
+<td>For a Meter Reading trigger, this field is the Trigger Meter Type. It is set to e (every), o (other), empty if not meter reading based.</td>
+</tr>
+<tr>
+<td align="left">strTRType</td>
+<td align="left">String</td>
+<td>It is the Trigger Reading End type. It is set to n (no end reading), b (end by reading).</td>
+</tr>
+<tr>
+<td align="left">strTSType</td>
+<td align="left">String</td>
+<td>It is the Trigger Schedule Type. It is set to h (hourly), d (daily), w (weekly), m (monthly), y (yearly).</td>
+</tr>
+<tr>
+<td align="left">strType</td>
+<td align="left">String</td>
+<td>This field denotes the type of the Schedule Trigger. It is set to t for Time Schedule trigger, r for Meter Reading Trigger and e for an Event Trigger.</td>
+</tr>
+<tr>
+<td align="left">strMrLogic</td>
+<td align="left">String</td>
+<td>For a Meter Reading trigger, this field is used to determine the logic of the schedule. It is set x (fixed) or t (floating).</td>
+</tr>
+<tr>
+<td align="left">bolMrByWOClosed</td>
+<td align="left">boolean</td>
+<td>If set to true, the Meter Reading trigger should check the reading when the WO is closed.</td>
+</tr>
+<tr>
+<td align="left">bolCreateWorkOrderOnStartDate</td>
+<td align="left">boolean</td>
+<td>If set to true, it indicates that a WorkOrder be created on the start date when the trigger is scheduled.</td>
+</tr>
+<tr>
+<td align="left">intAssetID</td>
+<td align="left">Integer</td>
+<td>Indicates the ID for an Asset associated with the ScheduledMaintenance that creates the trigger. For a Meter Reading trigger, this field needs to be populated with the Asset id of one of the ScheduledMaintenance Assets.</td>
+</tr>
+<tr>
+<td align="left">strScheduleDescription</td>
+<td align="left">String</td>
+<td>The description for the Schedule Trigger.</td>
+</tr>
+<tr>
+<td align="left">intTRTriggerTime</td>
+<td align="left">Integer</td>
+<td>For all the Time Schedule triggers except an hourly trigger, this field specifies time at which it will be triggered. It can have a value between 0 and 23.</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<p><strong>Resonse example</strong></p>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Updated successfully!&quot;
+    }
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;update failed&quot;
+}
+</code></pre>
+
+<h1 id="delete-scheduletrigger">Delete ScheduleTrigger</h1>
+<p>Delete a ScheduleTrigger by Id</p>
+<p><strong>URL</strong> : <code>/api/scheduletrigger/:Id</code></p>
+<p><strong>Method</strong> : <code>DELETE</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduleTrigger.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<p><strong>Resonse example</strong></p>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Deleted successfully!&quot;,
+    data: null
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If there was no asset available to delete.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Delete failed&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../User/index.html" class="btn btn-neutral float-right" title="User">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ScheduledMaintenance/index.html" class="btn btn-neutral" title="ScheduledMaintenance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ScheduledMaintenance/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../User/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-12-02 08:08:15
+-->

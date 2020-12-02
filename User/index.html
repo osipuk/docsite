@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>User - CMMS Api Doc</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "User";
+    var mkdocs_page_input_path = "User\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> CMMS Api Doc</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Account</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Asset/index.html">Asset</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEvent/index.html">AssetEvent</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEventType/index.html">AssetEventType</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Business/index.html">Business</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ChargeDepartment/index.html">ChargeDepartment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MeterReading/index.html">MeterReading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MeterReadingUnit/index.html">MeterReadingUnit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Project/index.html">Project</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ScheduledMaintenance/index.html">ScheduledMaintenance</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ScheduleTrigger/index.html">ScheduleTrigger</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">User</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-user">Create User</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-user-list">Get all user list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-user-by-id">Get Single User By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-user">Update User</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-user">Delete User</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrder/index.html">WorkOrder</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderStatus/index.html">WorkOrderStatus</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderTask/index.html">WorkOrderTask</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CMMS Api Doc</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>User</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="create-user">Create User</h1>
+<p>This object represents a user that can access and use the CMMS or a user group. Note: Only inactive users can be added through the API (with intUserStatusID set to 0). The user has to be activated using the CMMS.</p>
+<p>Create an User if  User does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/users/register</code></p>
+<p><strong>Method</strong> : <code>POST</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="center">Required</th>
+<th align="right">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strFullName</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>The full name of the user or user group.</td>
+</tr>
+<tr>
+<td align="left">intUserStatusID</td>
+<td align="center">optional</td>
+<td align="right">Integer</td>
+<td>This can take the value <code>0</code> or <code>1</code>. A status <code>1</code> means that the user is active, whereas a status 0 means that the user is currently not activated and cannot access and use the CMMS.</td>
+</tr>
+<tr>
+<td align="left">strTelephone2</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Secondary phone number.</td>
+</tr>
+<tr>
+<td align="left">strEmailAddress</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>Email address.</td>
+</tr>
+<tr>
+<td align="left">strUserTitle</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>The title of the user. For example : <code>"Head of Operations" or "Program Director"</code>.</td>
+</tr>
+<tr>
+<td align="left">strPersonnelCode</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Field that can be used to store a personnel code associated to this user.</td>
+</tr>
+<tr>
+<td align="left">strUserName</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>The username that will be used by the user to access the CMMS.</td>
+</tr>
+<tr>
+<td align="left">strTelephone</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>Primary phone number.</td>
+</tr>
+<tr>
+<td align="left">strNotes</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>This fied can contain technical notes about the user. For example : <code>"Data imported from V2: language=English"</code>.</td>
+</tr>
+<tr>
+<td align="left">strRequestNotes</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Contains a string stating when the account was created. For example : <code>"Wed Nov 23 09:43:49 EST 2011: Account created."</code>.</td>
+</tr>
+<tr>
+<td align="left">bolGroup</td>
+<td align="center">optional</td>
+<td align="right">boolean</td>
+<td>This can take the value 0 or 1 or null. A value of 1 means the object represents a user group.</td>
+</tr>
+<tr>
+<td align="left">bolApiManaged</td>
+<td align="center">optional</td>
+<td align="right">boolean</td>
+<td>The boolean value represents if the user is created through the API, in an external system. User information is managed in the Originating system.</td>
+</tr>
+<tr>
+<td align="left">strPreferences</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Technical string defining the user's preferences.</td>
+</tr>
+<tr>
+<td align="left">password</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>user's password.</td>
+</tr>
+<tr>
+<td align="left">passwordconfirm</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>password confirm.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data example</strong> All fields must be sent.</p>
+<pre><code class="json">{
+    &quot;strFullName&quot;: &quot;first last&quot;,
+    &quot;strTelephone&quot;: &quot;5141257&quot;,
+    &quot;strEmailAddress&quot;: &quot;test@gmai.com&quot;,
+    &quot;bolGroup&quot;:true,
+    &quot;password&quot;: &quot;test!@3&quot;,
+    &quot;passwordconfirm&quot;: &quot;test!@3&quot;,
+    ... ...
+}
+</code></pre>
+
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;User added successfully!!!&quot;,
+    &quot;data&quot;: {id: &quot;5f68a89c247532232419483c&quot;}
+    }
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Email is required&quot;
+}
+</code></pre>
+
+<p><strong> Or </strong></p>
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;,
+}
+</code></pre>
+
+<h1 id="get-all-user-list">Get all user list</h1>
+<p>Get the all registered user list.</p>
+<p><strong>URL</strong> : <code>/api/users/userlist</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
+<p><strong> Success Response: </strong> </p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: null,
+    &quot;data&quot;: [
+        {
+            &quot;_id&quot;: &quot;5f6212d8ed7daa16dcbf44ca&quot;,
+            &quot;strFullName&quot;: &quot;test demo&quot;,
+            &quot;strEmailAddress&quot;: &quot;pavel@gmail.com&quot;,
+            &quot;strTelephone&quot;: &quot;123456&quot;,
+            &quot;strTelephone2&quot;: &quot;1&quot;,
+            &quot;intUserStatusID&quot;: 1,
+            &quot;strUserTitle&quot;: &quot;2&quot;,
+            &quot;strPersonnelCode&quot;: &quot;&quot;,
+            &quot;strUserName&quot;: &quot;3&quot;,
+            &quot;strNotes&quot;: &quot;4&quot;,
+            &quot;strRequestNotes&quot;: &quot;sdfddd&quot;,
+            &quot;bolGroup&quot;: true,
+            &quot;bolApiManaged&quot;: true,
+            &quot;strPreferences&quot;: &quot;6&quot;,
+            &quot;__v&quot;: 0
+        },
+        {
+            &quot;_id&quot;: &quot;5f68a89c247532232419483c&quot;,
+            &quot;strFullName&quot;: &quot;ttest pavel&quot;,
+            &quot;strEmailAddress&quot;: &quot;olga@gmail.com&quot;,
+            &quot;strTelephone&quot;: &quot;45789&quot;,
+            &quot;strTelephone2&quot;: &quot;&quot;,
+            &quot;intUserStatusID&quot;: 0,
+            &quot;strUserTitle&quot;: &quot;&quot;,
+            &quot;strPersonnelCode&quot;: &quot;&quot;,
+            &quot;strUserName&quot;: &quot;&quot;,
+            &quot;strNotes&quot;: &quot;&quot;,
+            &quot;strRequestNotes&quot;: &quot;&quot;,
+            &quot;bolGroup&quot;: false,
+            &quot;bolApiManaged&quot;: false,
+            &quot;strPreferences&quot;: &quot;&quot;,
+            &quot;__v&quot;: 0
+        }
+    ]
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<h1 id="get-single-user-by-id">Get Single User By Id</h1>
+<p>Get a single User by id if current user was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/users/:uid</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the user.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: null,
+    &quot;data&quot;: {
+        &quot;user&quot;: {
+            &quot;_id&quot;: &quot;5f6212d8ed7daa16dcbf44ca&quot;,
+            &quot;strFullName&quot;: &quot;test demo&quot;,
+            &quot;password&quot;: &quot;$2b$10$jIqho0m8oHKsXTNIk6xFcu0kSBme4zNieLyrm.cFDLYMCpVzRcKPq&quot;,
+            &quot;strEmailAddress&quot;: &quot;test@gmail.com&quot;,
+            &quot;strTelephone&quot;: &quot;strTelephone&quot;,
+            &quot;strTelephone2&quot;: &quot;&quot;,
+            &quot;intUserStatusID&quot;: 1,
+            &quot;strUserTitle&quot;: &quot;strUserTitle&quot;,
+            &quot;strPersonnelCode&quot;: &quot;&quot;,
+            &quot;strUserName&quot;: &quot;3&quot;,
+            &quot;strNotes&quot;: &quot;strNotes&quot;,
+            &quot;strRequestNotes&quot;: &quot;strRequste notes&quot;,
+            &quot;bolGroup&quot;: true,
+            &quot;bolApiManaged&quot;: true,
+            &quot;strPreferences&quot;: &quot;6&quot;,
+            &quot;__v&quot;: 0
+        }
+    }
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong> Or </strong></p>
+<p><strong>Condition</strong> : If user does not exist on server.</p>
+<p><strong>Code</strong> : <code>404 Not Found</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;User not found&quot;, 
+   &quot;data&quot;:null
+}
+</code></pre>
+
+<h1 id="update-user">Update User</h1>
+<p>Update the User by Id</p>
+<p><strong>URL</strong> : <code>/api/users/:uid</code></p>
+<p><strong>Method</strong> : <code>PUT</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the user.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="center">Required</th>
+<th align="right">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strFullName</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>The full name of the user or user group.</td>
+</tr>
+<tr>
+<td align="left">intUserStatusID</td>
+<td align="center">optional</td>
+<td align="right">Integer</td>
+<td>This can take the value <code>0</code> or <code>1</code>. A status <code>1</code> means that the user is active, whereas a status 0 means that the user is currently not activated and cannot access and use the CMMS.</td>
+</tr>
+<tr>
+<td align="left">strTelephone2</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Secondary phone number.</td>
+</tr>
+<tr>
+<td align="left">strEmailAddress</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>Email address.</td>
+</tr>
+<tr>
+<td align="left">strUserTitle</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>The title of the user. For example : <code>"Head of Operations" or "Program Director"</code>.</td>
+</tr>
+<tr>
+<td align="left">strPersonnelCode</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Field that can be used to store a personnel code associated to this user.</td>
+</tr>
+<tr>
+<td align="left">strUserName</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>The username that will be used by the user to access the CMMS.</td>
+</tr>
+<tr>
+<td align="left">strTelephone</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>Primary phone number.</td>
+</tr>
+<tr>
+<td align="left">strNotes</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>This fied can contain technical notes about the user. For example : <code>"Data imported from V2: language=English"</code>.</td>
+</tr>
+<tr>
+<td align="left">strRequestNotes</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Contains a string stating when the account was created. For example : <code>"Wed Nov 23 09:43:49 EST 2011: Account created."</code>.</td>
+</tr>
+<tr>
+<td align="left">bolGroup</td>
+<td align="center">optional</td>
+<td align="right">boolean</td>
+<td>This can take the value 0 or 1 or null. A value of 1 means the object represents a user group.</td>
+</tr>
+<tr>
+<td align="left">bolApiManaged</td>
+<td align="center">optional</td>
+<td align="right">boolean</td>
+<td>The boolean value represents if the user is created through the API, in an external system. User information is managed in the Originating system.</td>
+</tr>
+<tr>
+<td align="left">strPreferences</td>
+<td align="center">optional</td>
+<td align="right">String</td>
+<td>Technical string defining the user's preferences.</td>
+</tr>
+<tr>
+<td align="left">password</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>user's password.</td>
+</tr>
+<tr>
+<td align="left">passwordconfirm</td>
+<td align="center">yes</td>
+<td align="right">String</td>
+<td>password confirm.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data example</strong>  <code>All fields must be sent.</code></p>
+<pre><code class="json">{
+    &quot;strFullName&quot;: &quot;first last&quot;,
+    &quot;strTelephone&quot;: &quot;5141257&quot;,
+    &quot;strEmailAddress&quot;: &quot;test@gmai.com&quot;,
+    &quot;bolGroup&quot;:true,
+    &quot;password&quot;: &quot;test!@3&quot;,
+    &quot;passwordconfirm&quot;: &quot;test!@3&quot;,
+    ... ...
+}
+</code></pre>
+
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;User updated successfully!&quot;,
+    data: &quot;user&quot;: {
+            &quot;_id&quot;: &quot;5f6212d8ed7daa16dcbf44ca&quot;,
+            &quot;strFullName&quot;: &quot;first last&quot;,
+             &quot;strEmailAddress&quot;: &quot;test@gmail.com&quot;,
+            &quot;strTelephone&quot;: &quot;5141257&quot;,
+            &quot;strTelephone2&quot;: &quot;&quot;,
+            &quot;intUserStatusID&quot;: 1,
+            &quot;strUserTitle&quot;: &quot;strUserTitle&quot;,
+            &quot;strPersonnelCode&quot;: &quot;&quot;,
+            &quot;strUserName&quot;: &quot;3&quot;,
+            &quot;strNotes&quot;: &quot;strNotes&quot;,
+            &quot;strRequestNotes&quot;: &quot;strRequste notes&quot;,
+            &quot;bolGroup&quot;: true,
+            &quot;bolApiManaged&quot;: true,
+            &quot;strPreferences&quot;: &quot;6&quot;,
+            &quot;__v&quot;: 0
+        }
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Update failed&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong> Or </strong></p>
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<h1 id="delete-user">Delete User</h1>
+<p>Delete the User by Id</p>
+<p><strong>URL</strong> : <code>/api/users/:uid</code></p>
+<p><strong>Method</strong> : <code>DELETE</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the user.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example</li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;User deleted successfully!&quot;,
+    data: null
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If there was no User available to delete.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Delete failed&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../WorkOrder/index.html" class="btn btn-neutral float-right" title="WorkOrder">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ScheduleTrigger/index.html" class="btn btn-neutral" title="ScheduleTrigger"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ScheduleTrigger/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../WorkOrder/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-12-02 08:08:15
+-->

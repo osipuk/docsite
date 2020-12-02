@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Home - CMMS Api Doc</title>
+  <title>Account - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Home";
+    var mkdocs_page_name = "Account";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = null;
   </script>
@@ -36,7 +36,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="Account/index.html" class="icon icon-home"> CMMS Api Doc</a>
+        <a href="index.html" class="icon icon-home"> CMMS Api Doc</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -48,9 +48,27 @@
 	<ul class="current">
 	  
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="Account/index.html">Account</a>
+    <a class="current" href="index.html">Account</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-account">Create Account</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-account-list">Get all Account list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-account">Update Account</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-account-by-id">Get Single Account By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-account">Delete Account</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -83,6 +101,56 @@
     <a class="" href="Business/index.html">Business</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="ChargeDepartment/index.html">ChargeDepartment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="MeterReading/index.html">MeterReading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="MeterReadingUnit/index.html">MeterReadingUnit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="Project/index.html">Project</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="ScheduledMaintenance/index.html">ScheduledMaintenance</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="ScheduleTrigger/index.html">ScheduleTrigger</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="User/index.html">User</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="WorkOrder/index.html">WorkOrder</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="WorkOrderStatus/index.html">WorkOrderStatus</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="WorkOrderTask/index.html">WorkOrderTask</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -93,7 +161,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="Account/index.html">CMMS Api Doc</a>
+        <a href="index.html">CMMS Api Doc</a>
       </nav>
 
       
@@ -101,11 +169,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="Account/index.html">Docs</a> &raquo;</li>
+    <li><a href="index.html">Docs</a> &raquo;</li>
     
       
     
-    <li>Home</li>
+    <li>Account</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -115,11 +183,314 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="create-account">Create Account</h1>
+<p>This object is used to access the Account lookup table.</p>
+<p>Create an Account if  Account does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/account</code></p>
+<p><strong>Method</strong> : <code>POST</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Require</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strCode</td>
+<td align="left">Yes</td>
+<td align="left">String</td>
+<td>A unique code for referencing the account.</td>
+</tr>
+<tr>
+<td align="left">strDescription</td>
+<td align="left">Yes</td>
+<td align="left">String</td>
+<td>A short text describing the account.</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Created successfully!&quot;,
+    &quot;data&quot;: {id: &quot;56&quot;}
+    }
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;strCode is required&quot;
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Create failed&quot;
+}
+</code></pre>
+
+<h1 id="get-all-account-list">Get all Account list</h1>
+<p>Get the all registered Account list.</p>
+<p><strong>URL</strong> : <code>/api/account</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Account list found!&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;_id&quot;: &quot;45&quot;,
+            &quot;strCode&quot;: &quot;A45&quot;,
+            &quot;strDescription&quot;: &quot;String&quot;
+            &quot;__v&quot;: 0
+        },
+        ...
+    ]
+}
+</code></pre>
+
+<p><strong> Error Responses </strong></p>
+<p><strong> Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong> Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;
+}
+</code></pre>
+
+<h1 id="update-account">Update Account</h1>
+<p>Update the Account by Id</p>
+<p><strong>URL</strong> : <code>/api/account/:Id</code></p>
+<p><strong>Method</strong> : <code>PUT</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the account.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Require</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">strCode</td>
+<td align="left">Yes</td>
+<td align="left">String</td>
+<td>A unique code for referencing the account.</td>
+</tr>
+<tr>
+<td align="left">strDescription</td>
+<td align="left">Yes</td>
+<td align="left">String</td>
+<td>A short text describing the account.</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Updated successfully!&quot;
+    }
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Update failed&quot;
+}
+</code></pre>
+
+<h1 id="get-single-account-by-id">Get Single Account By Id</h1>
+<p>Get a single Account by id if current Account was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/account/:Id</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the account.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;data&quot;: 
+        {
+            &quot;_id&quot;: &quot;54&quot;,
+         &quot;strCode&quot;: &quot;34&quot;,
+         &quot;strDescription&quot;: &quot;String&quot;
+         &quot;intUpdated&quot;:2020-11-26T10:42:25.136+00:00
+        }
+}
+</code></pre>
+
+<p><strong>Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong> Or </strong></p>
+<p><strong>Condition</strong> : If workorder does not exist on server.</p>
+<p><strong>Code</strong> : <code>404 Not Found</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Not found&quot;, 
+   &quot;data&quot;:null
+}
+</code></pre>
+
+<h1 id="delete-account">Delete Account</h1>
+<p>Delete a Account by Id</p>
+<p><strong>URL</strong> : <code>/api/account/:Id</code></p>
+<p><strong>Method</strong> : <code>DELETE</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the account.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Deleted successfully!&quot;,
+    data: null
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If there was no asset available to delete.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example</li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Delete failed&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Asset/index.html" class="btn btn-neutral float-right" title="Asset">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>
@@ -144,6 +515,8 @@
       
       
       
+        <span style="margin-left: 15px"><a href="Asset/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
     </span>
 </div>
     <script>var base_url = '.';</script>
@@ -155,5 +528,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-12-02 04:48:05
+Build Date UTC : 2020-12-02 08:08:15
 -->
