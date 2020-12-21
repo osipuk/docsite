@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Project - CMMS Api Doc</title>
+  <title>WorkOrderStatusTransition - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Project";
-    var mkdocs_page_input_path = "Project\\index.md";
+    var mkdocs_page_name = "WorkOrderStatusTransition";
+    var mkdocs_page_input_path = "WorkOrderStatusTransition\\index.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -98,27 +98,9 @@
     <a class="" href="../MeterReadingUnit/index.html">MeterReadingUnit</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">Project</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#create-project">Create Project</a></li>
-    
-
-    <li class="toctree-l2"><a href="#read-all-project-list">Read all Project list</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-single-project-by-id">Get Single Project By Id</a></li>
-    
-
-    <li class="toctree-l2"><a href="#update-project">Update Project</a></li>
-    
-
-    <li class="toctree-l2"><a href="#delete-project">Delete Project</a></li>
-    
-
-    </ul>
+    <a class="" href="../Project/index.html">Project</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -156,9 +138,27 @@
     <a class="" href="../WorkOrderPart/index.html">WorkOrderPart</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../WorkOrderStatusTransition/index.html">WorkOrderStatusTransition</a>
+    <a class="current" href="index.html">WorkOrderStatusTransition</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-workorderstatustransition">Create WorkOrderStatusTransition</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-workorderstatustransition-list">Get all WorkOrderStatusTransition list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-workorderstatustransition-by-id">Get Single WorkOrderStatusTransition By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-workorderstatustransition">Update WorkOrderStatusTransition</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-workorderstatustransition">Delete WorkOrderStatusTransition</a></li>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -183,7 +183,7 @@
     
       
     
-    <li>Project</li>
+    <li>WorkOrderStatusTransition</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -193,10 +193,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-project">Create Project</h1>
-<p>This object is used to represent a project. A project is used to group scheduled maintenances and work orders together.</p>
-<p>Create a Project if  Project does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/project</code></p>
+                <h1 id="create-workorderstatustransition">Create WorkOrderStatusTransition</h1>
+<p>This object is used to represent work orders. A work order is a set of maintenance tasks that have to be executed by some assigned users on a given asset. </p>
+<p>Create an WorkOrderStatusTransition if  WorkOrderStatusTransition does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/workorderstatustransition</code></p>
 <p><strong>Method</strong> : <code>POST</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -204,34 +204,84 @@
 <thead>
 <tr>
 <th align="left">Param</th>
-<th align="left">Required</th>
 <th align="left">Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">intSiteID</td>
-<td align="left">Yes</td>
+<td align="left">intFromWorkOrderStatusID</td>
 <td align="left">Integer</td>
-<td>For multi-sites tenants, the ID of the site the project was created for. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
+<td>The ID of the previous Work Order status that was changed. For getting possible values, please refer to the WorkOrderStatus section.</td>
 </tr>
 <tr>
-<td align="left">strName</td>
-<td align="left"></td>
+<td align="left">intToWorkOrderStatusID</td>
 <td align="left">Integer</td>
-<td>Display name of the project.</td>
+<td>TThe ID of the new Work Order status that was set on the Work Order. For getting possible values, please refer to the WorkOrderStatus section.</td>
+</tr>
+<tr>
+<td align="left">intUserID</td>
+<td align="left">Integer</td>
+<td>The ID of the user that made the status transition on a Work Order. For getting possible values, please refer to the User section.</td>
+</tr>
+<tr>
+<td align="left">intWorkOrderID</td>
+<td align="left">Integer</td>
+<td>TThe ID of the Work Order on which the status was changed. For getting possible values, please refer to the WorkOrder section.</td>
+</tr>
+<tr>
+<td align="left">dtmDate</td>
+<td align="left">Date</td>
+<td>The date and time when the status transition was made.</td>
+</tr>
+<tr>
+<td align="left">dv_intFromWorkOrderStatusID</td>
+<td align="left">string</td>
+<td>The name of the WorkOrderStatus associated with intFromWorkOrderStatusID.</td>
+</tr>
+<tr>
+<td align="left">dv_intToWorkOrderStatusID</td>
+<td align="left">String</td>
+<td>The name of the WorkOrderStatus associated with intToWorkOrderStatusID.</td>
+</tr>
+<tr>
+<td align="left">dv_intUserID</td>
+<td align="left">String</td>
+<td>The name of the User associated with the intUserID.</td>
+</tr>
+<tr>
+<td align="left">dv_intWorkOrderID</td>
+<td align="left">String</td>
+<td>The code of the WorkOrder associated with intWorkOrderID.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>Data example </li>
+</ul>
+<pre><code class="json">{
+    &quot;intFromWorkOrderStatusID&quot;: 4156,
+    &quot;intToWorkOrderStatusID&quot;: 9,
+    &quot;intUserID&quot;: 9,
+    &quot;intWorkOrderID&quot;: 9,
+    &quot;dtmDate&quot;: &quot;2009-02-05.0004.00004&quot;,
+    ... ...
+}
+</code></pre>
+
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
-<li>Resonse example</li>
+<li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Created successfully!&quot;,
-    &quot;data&quot;: {id: &quot;1&quot;}
+   &quot;msg&quot;: &quot;WorkOrderStatusTransition added successfully!&quot;,
+    &quot;data&quot;: {id: &quot;4rt8a89c24753232419483c&quot;}
     }
 </code></pre>
 
@@ -259,7 +309,7 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;intSiteID is required&quot;
+    &quot;msg&quot;: &quot;intWorkOrderStatusID is required&quot;
 }
 </code></pre>
 
@@ -268,9 +318,9 @@
 }
 </code></pre>
 
-<h1 id="read-all-project-list">Read all Project list</h1>
-<p>Get the all registered Project list.</p>
-<p><strong>URL</strong> : <code>/api/project</code></p>
+<h1 id="get-all-workorderstatustransition-list">Get all WorkOrderStatusTransition list</h1>
+<p>Get the all registered WorkOrderStatusTransition list.</p>
+<p><strong>URL</strong> : <code>/api/workorderstatustransition</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
@@ -280,12 +330,15 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;msg&quot;: &quot;WorkOrderStatusTransition list found!&quot;,
     &quot;data&quot;: [
         {
-            &quot;_id&quot;: &quot;1&quot;,
-            &quot;intSiteID&quot;: 2,
-            &quot;strName&quot;:&quot;String&quot;
+            &quot;_id&quot;: &quot;5f6a6f90d9741d152c754178&quot;,
+            &quot;intFromWorkOrderStatusID&quot;: 4156,
+            &quot;intToWorkOrderStatusID&quot;: 9,
+            &quot;intUserID&quot;: 9,
+            &quot;intWorkOrderID&quot;: 9,
+            &quot;dtmDate&quot;: &quot;2009-02-05.0004.00004&quot;,
             &quot;__v&quot;: 0
         },
         ...
@@ -317,29 +370,33 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Internal Server error&quot;
+    &quot;msg&quot;: &quot;Internal Server error.&quot;
 }
 </code></pre>
 
-<h1 id="get-single-project-by-id">Get Single Project By Id</h1>
-<p>Get a single Project by id if current Project was registered on it.</p>
-<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
+<h1 id="get-single-workorderstatustransition-by-id">Get Single WorkOrderStatusTransition By Id</h1>
+<p>Get a single WorkOrderStatusTransition by id if current WorkOrderStatusTransition was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/workorderstatustransition/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the project.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the WorkOrderStatusTransition.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;msg&quot;: &quot;WorkOrderStatusTransition found!&quot;,
     &quot;data&quot;: 
         {
-            &quot;_id&quot;: &quot;3&quot;,
-            &quot;intSiteID&quot;:&quot;Integer&quot;,
-            &quot;strName&quot;:&quot;String&quot;
+            &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
+            &quot;intFromWorkOrderStatusID&quot;: 4156,
+            &quot;intToWorkOrderStatusID&quot;: 9,
+            &quot;intUserID&quot;: 9,
+            &quot;intWorkOrderID&quot;: 9,
+            &quot;dtmDate&quot;: &quot;2009-02-05.0004.00004&quot;,
+            ...
         }
 }
 </code></pre>
@@ -363,59 +420,109 @@
 </code></pre>
 
 <p><strong> Or </strong></p>
-<p><strong>Condition</strong> : If AssetCategory does not exist on server.</p>
+<p><strong>Condition</strong> : If WorkOrderStatusTransition does not exist on server.</p>
 <p><strong>Code</strong> : <code>404 Not Found</code></p>
 <ul>
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Not found&quot;, 
+   &quot;msg&quot;: &quot;WorkOrderStatusTransition not found&quot;, 
    &quot;data&quot;:null
 }
 </code></pre>
 
-<h1 id="update-project">Update Project</h1>
-<p>Update the Project by Id</p>
-<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
+<h1 id="update-workorderstatustransition">Update WorkOrderStatusTransition</h1>
+<p>Update the WorkOrderStatusTransition by Id</p>
+<p><strong>URL</strong> : <code>/api/workorderstatustransition/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the Project.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorder.</p>
 <table>
 <thead>
 <tr>
 <th align="left">Param</th>
-<th align="left">Required</th>
 <th align="left">Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">intSiteID</td>
-<td align="left">Yes</td>
+<td align="left">intFromWorkOrderStatusID</td>
 <td align="left">Integer</td>
-<td>For multi-sites tenants, the ID of the site the project was created for. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
+<td>The ID of the previous Work Order status that was changed. For getting possible values, please refer to the WorkOrderStatus section.</td>
 </tr>
 <tr>
-<td align="left">strName</td>
-<td align="left"></td>
+<td align="left">intToWorkOrderStatusID</td>
 <td align="left">Integer</td>
-<td>Display name of the project.</td>
+<td>TThe ID of the new Work Order status that was set on the Work Order. For getting possible values, please refer to the WorkOrderStatus section.</td>
+</tr>
+<tr>
+<td align="left">intUserID</td>
+<td align="left">Integer</td>
+<td>The ID of the user that made the status transition on a Work Order. For getting possible values, please refer to the User section.</td>
+</tr>
+<tr>
+<td align="left">intWorkOrderID</td>
+<td align="left">Integer</td>
+<td>TThe ID of the Work Order on which the status was changed. For getting possible values, please refer to the WorkOrder section.</td>
+</tr>
+<tr>
+<td align="left">dtmDate</td>
+<td align="left">Date</td>
+<td>The date and time when the status transition was made.</td>
+</tr>
+<tr>
+<td align="left">dv_intFromWorkOrderStatusID</td>
+<td align="left">string</td>
+<td>The name of the WorkOrderStatus associated with intFromWorkOrderStatusID.</td>
+</tr>
+<tr>
+<td align="left">dv_intToWorkOrderStatusID</td>
+<td align="left">String</td>
+<td>The name of the WorkOrderStatus associated with intToWorkOrderStatusID.</td>
+</tr>
+<tr>
+<td align="left">dv_intUserID</td>
+<td align="left">String</td>
+<td>The name of the User associated with the intUserID.</td>
+</tr>
+<tr>
+<td align="left">dv_intWorkOrderID</td>
+<td align="left">String</td>
+<td>The code of the WorkOrder associated with intWorkOrderID.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>Data example </li>
+</ul>
+<pre><code class="json">{
+   &quot;intFromWorkOrderStatusID&quot;: 4156,
+    &quot;intToWorkOrderStatusID&quot;: 9,
+    &quot;intUserID&quot;: 9,
+    &quot;intWorkOrderID&quot;: 9,
+    &quot;dtmDate&quot;: &quot;2009-02-05.0004.00004&quot;,
+    ... ...
+}
+</code></pre>
+
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
-<li>Resonse example </li>
+<li>Resonse example</li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Updated successfully!&quot;
+   &quot;msg&quot;: &quot;WorkOrderStatusTransition updated successfully!&quot;
     }
 </code></pre>
 
-<p><strong> Error Responses: </strong></p>
+<p><strong> Error Responses: </strong> </p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -439,24 +546,24 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Update failed&quot;
+    &quot;msg&quot;: &quot;update failed&quot;
 }
 </code></pre>
 
-<h1 id="delete-project">Delete Project</h1>
-<p>Delete a Project by Id</p>
-<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
+<h1 id="delete-workorderstatustransition">Delete WorkOrderStatusTransition</h1>
+<p>Delete a WorkOrderStatusTransition by Id</p>
+<p><strong>URL</strong> : <code>/api/workorderstatustransition/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the Project.</p>
-<p><strong> Success Response: </strong></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the WorkOrderStatusTransition.</p>
+<p><strong> Success Response:</strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Deleted successfully!&quot;,
+    &quot;msg&quot;: &quot;WorkOrderStatusTransition deleted successfully!&quot;,
     data: null
 }
 </code></pre>
@@ -496,10 +603,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ScheduledMaintenance/index.html" class="btn btn-neutral float-right" title="ScheduledMaintenance">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../MeterReadingUnit/index.html" class="btn btn-neutral" title="MeterReadingUnit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../WorkOrderPart/index.html" class="btn btn-neutral" title="WorkOrderPart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -525,10 +630,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../MeterReadingUnit/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../WorkOrderPart/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../ScheduledMaintenance/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

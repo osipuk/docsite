@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Project - CMMS Api Doc</title>
+  <title>WorkOrderPart - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Project";
-    var mkdocs_page_input_path = "Project\\index.md";
+    var mkdocs_page_name = "WorkOrderPart";
+    var mkdocs_page_input_path = "WorkOrderPart\\index.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -98,27 +98,9 @@
     <a class="" href="../MeterReadingUnit/index.html">MeterReadingUnit</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">Project</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#create-project">Create Project</a></li>
-    
-
-    <li class="toctree-l2"><a href="#read-all-project-list">Read all Project list</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-single-project-by-id">Get Single Project By Id</a></li>
-    
-
-    <li class="toctree-l2"><a href="#update-project">Update Project</a></li>
-    
-
-    <li class="toctree-l2"><a href="#delete-project">Delete Project</a></li>
-    
-
-    </ul>
+    <a class="" href="../Project/index.html">Project</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -151,9 +133,27 @@
     <a class="" href="../WorkOrderTask/index.html">WorkOrderTask</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../WorkOrderPart/index.html">WorkOrderPart</a>
+    <a class="current" href="index.html">WorkOrderPart</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-workorderpart">Create WorkOrderPart</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-workorderpart-list">Get all workorderpart list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-workorderpart-by-id">Get Single WorkOrderPart By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-workorderpart">Update WorkOrderPart</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-workorderpart">Delete WorkOrderPart</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -183,7 +183,7 @@
     
       
     
-    <li>Project</li>
+    <li>WorkOrderPart</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -193,10 +193,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-project">Create Project</h1>
-<p>This object is used to represent a project. A project is used to group scheduled maintenances and work orders together.</p>
-<p>Create a Project if  Project does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/project</code></p>
+                <h1 id="create-workorderpart">Create WorkOrderPart</h1>
+<p>This object is used to represent work orders. A work order is a set of maintenance tasks that have to be executed by some assigned users on a given asset. </p>
+<p>Create an WorkOrderPart if  WorkOrderPart does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/workorderpart</code></p>
 <p><strong>Method</strong> : <code>POST</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -204,34 +204,89 @@
 <thead>
 <tr>
 <th align="left">Param</th>
-<th align="left">Required</th>
 <th align="left">Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">intSiteID</td>
-<td align="left">Yes</td>
+<td align="left">intWorkOrderID</td>
 <td align="left">Integer</td>
-<td>For multi-sites tenants, the ID of the site the project was created for. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
+<td>The ID of the work order the part will be needed for.</td>
 </tr>
 <tr>
-<td align="left">strName</td>
-<td align="left"></td>
+<td align="left">intAssetID</td>
 <td align="left">Integer</td>
-<td>Display name of the project.</td>
+<td>The ID of the asset the part will be needed for. For getting possible values, please refer to the Asset section.</td>
+</tr>
+<tr>
+<td align="left">intStockID</td>
+<td align="left">Integer</td>
+<td>The ID of the stock representing the part. For getting possible values, please refer to the Stock section.</td>
+</tr>
+<tr>
+<td align="left">intPartID</td>
+<td align="left">Integer</td>
+<td>The ID of the asset associated with the stock that represents the part. For getting possible values, please refer to the Asset section.</td>
+</tr>
+<tr>
+<td align="left">qtySuggestedQuantity</td>
+<td align="left">Integer</td>
+<td>This field can be used to indicate the quantity that is going to be used for this part to perform the work order.</td>
+</tr>
+<tr>
+<td align="left">qtyActualQuantityUsed</td>
+<td align="left">integer</td>
+<td>This field can be used to indicate the quantity that was actually used to performed the work order.</td>
+</tr>
+<tr>
+<td align="left">intUpdated</td>
+<td align="left">integer</td>
+<td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
+</tr>
+<tr>
+<td align="left">dv_intWorkOrderID</td>
+<td align="left">string</td>
+<td>The code of the work order. For example : "WO 2009-09-01.0010.00048.Any". For more details, please refer to the WorkOrder section.</td>
+</tr>
+<tr>
+<td align="left">dv_intPartID</td>
+<td align="left">String</td>
+<td>The name and the code of the asset associated with the stock that represents the part.</td>
+</tr>
+<tr>
+<td align="left">dv_intAssetID</td>
+<td align="left">String</td>
+<td>The name and the code of the asset the part will be used to perform the work order on.</td>
+</tr>
+<tr>
+<td align="left">dv_intStockID</td>
+<td align="left">String</td>
+<td>The display value for the stock associated with the part. For example "Asset (asset code) at facility x aisle y row z".</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>Data example </li>
+</ul>
+<pre><code class="json">{
+    &quot;intPriorityID&quot;: 4156,
+    &quot;intSiteID&quot;: 9,
+    &quot;strCode&quot;: &quot;2009-02-05.0004.00004&quot;,
+    &quot;strCompletionNotes&quot;: &quot;strCompletionNotes&quot;,
+    &quot;intRCACauseID&quot;: 4
+    ... ...
+}
+</code></pre>
+
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
-<li>Resonse example</li>
+<li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Created successfully!&quot;,
-    &quot;data&quot;: {id: &quot;1&quot;}
+   &quot;msg&quot;: &quot;WorkOrderPart added successfully!&quot;,
+    &quot;data&quot;: {id: &quot;4rt8a89c24753232419483c&quot;}
     }
 </code></pre>
 
@@ -259,7 +314,7 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;intSiteID is required&quot;
+    &quot;msg&quot;: &quot;intWorkOrderStatusID is required&quot;
 }
 </code></pre>
 
@@ -268,9 +323,9 @@
 }
 </code></pre>
 
-<h1 id="read-all-project-list">Read all Project list</h1>
-<p>Get the all registered Project list.</p>
-<p><strong>URL</strong> : <code>/api/project</code></p>
+<h1 id="get-all-workorderpart-list">Get all workorderpart list</h1>
+<p>Get the all registered workorderpart list.</p>
+<p><strong>URL</strong> : <code>/api/workorderpart</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
@@ -280,12 +335,17 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;msg&quot;: &quot;WorkOrderPart list found!&quot;,
     &quot;data&quot;: [
         {
-            &quot;_id&quot;: &quot;1&quot;,
-            &quot;intSiteID&quot;: 2,
-            &quot;strName&quot;:&quot;String&quot;
+            &quot;_id&quot;: &quot;5f6a6f90d9741d152c754178&quot;,
+            &quot;intWorkOrderID&quot;: 11,
+            &quot;intAssetID&quot;: 22,
+            &quot;intStockID&quot;: 33,
+            &quot;intPartID&quot;: null,
+            &quot;qtySuggestedQuantity&quot;: &quot;&quot;,
+            &quot;qtyActualQuantityUsed&quot;: &quot;&quot;,
+            &quot;intUpdated&quot;: &quot;&quot;,
             &quot;__v&quot;: 0
         },
         ...
@@ -317,29 +377,34 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Internal Server error&quot;
+    &quot;msg&quot;: &quot;Internal Server error.&quot;
 }
 </code></pre>
 
-<h1 id="get-single-project-by-id">Get Single Project By Id</h1>
-<p>Get a single Project by id if current Project was registered on it.</p>
-<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
+<h1 id="get-single-workorderpart-by-id">Get Single WorkOrderPart By Id</h1>
+<p>Get a single WorkOrderPart by id if current workorderpart was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/workorderpart/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the project.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorderpart.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;msg&quot;: &quot;Workorderpart found!&quot;,
     &quot;data&quot;: 
         {
-            &quot;_id&quot;: &quot;3&quot;,
-            &quot;intSiteID&quot;:&quot;Integer&quot;,
-            &quot;strName&quot;:&quot;String&quot;
+            &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
+            &quot;intWorkOrderID&quot;: 1234,
+            &quot;intAssetID&quot;: 5678,
+            &quot;intStockID&quot;: 1111,
+            &quot;intPartID&quot;: 3434,
+            &quot;qtySuggestedQuantity&quot;: 2,
+            &quot;qtyActualQuantityUsed&quot;: 4
+            ...
         }
 }
 </code></pre>
@@ -363,59 +428,114 @@
 </code></pre>
 
 <p><strong> Or </strong></p>
-<p><strong>Condition</strong> : If AssetCategory does not exist on server.</p>
+<p><strong>Condition</strong> : If WorkOrderPart does not exist on server.</p>
 <p><strong>Code</strong> : <code>404 Not Found</code></p>
 <ul>
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Not found&quot;, 
+   &quot;msg&quot;: &quot;WorkOrderPart not found&quot;, 
    &quot;data&quot;:null
 }
 </code></pre>
 
-<h1 id="update-project">Update Project</h1>
-<p>Update the Project by Id</p>
-<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
+<h1 id="update-workorderpart">Update WorkOrderPart</h1>
+<p>Update the WorkOrderPart by Id</p>
+<p><strong>URL</strong> : <code>/api/workorderpart/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the Project.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorder.</p>
 <table>
 <thead>
 <tr>
 <th align="left">Param</th>
-<th align="left">Required</th>
 <th align="left">Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">intSiteID</td>
-<td align="left">Yes</td>
+<td align="left">intWorkOrderID</td>
 <td align="left">Integer</td>
-<td>For multi-sites tenants, the ID of the site the project was created for. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
+<td>The ID of the work order the part will be needed for.</td>
 </tr>
 <tr>
-<td align="left">strName</td>
-<td align="left"></td>
+<td align="left">intAssetID</td>
 <td align="left">Integer</td>
-<td>Display name of the project.</td>
+<td>The ID of the asset the part will be needed for. For getting possible values, please refer to the Asset section.</td>
+</tr>
+<tr>
+<td align="left">intStockID</td>
+<td align="left">Integer</td>
+<td>The ID of the stock representing the part. For getting possible values, please refer to the Stock section.</td>
+</tr>
+<tr>
+<td align="left">intPartID</td>
+<td align="left">Integer</td>
+<td>The ID of the asset associated with the stock that represents the part. For getting possible values, please refer to the Asset section.</td>
+</tr>
+<tr>
+<td align="left">qtySuggestedQuantity</td>
+<td align="left">Integer</td>
+<td>This field can be used to indicate the quantity that is going to be used for this part to perform the work order.</td>
+</tr>
+<tr>
+<td align="left">qtyActualQuantityUsed</td>
+<td align="left">integer</td>
+<td>This field can be used to indicate the quantity that was actually used to performed the work order.</td>
+</tr>
+<tr>
+<td align="left">intUpdated</td>
+<td align="left">integer</td>
+<td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
+</tr>
+<tr>
+<td align="left">dv_intWorkOrderID</td>
+<td align="left">string</td>
+<td>The code of the work order. For example : "WO 2009-09-01.0010.00048.Any". For more details, please refer to the WorkOrder section.</td>
+</tr>
+<tr>
+<td align="left">dv_intPartID</td>
+<td align="left">String</td>
+<td>The name and the code of the asset associated with the stock that represents the part.</td>
+</tr>
+<tr>
+<td align="left">dv_intAssetID</td>
+<td align="left">String</td>
+<td>The name and the code of the asset the part will be used to perform the work order on.</td>
+</tr>
+<tr>
+<td align="left">dv_intStockID</td>
+<td align="left">String</td>
+<td>The display value for the stock associated with the part. For example "Asset (asset code) at facility x aisle y row z".</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>Data example </li>
+</ul>
+<pre><code class="json">{
+    &quot;intWorkOrderID&quot;: 556,
+    &quot;intAssetID&quot;: 789,
+    &quot;intStockID&quot;: 98786,
+    &quot;intPartID&quot;: 8564,
+    &quot;qtySuggestedQuantity&quot;:545&quot;
+    ... ...
+}
+</code></pre>
+
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
-<li>Resonse example </li>
+<li>Resonse example</li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Updated successfully!&quot;
+   &quot;msg&quot;: &quot;WorkOrderPart updated successfully!&quot;
     }
 </code></pre>
 
-<p><strong> Error Responses: </strong></p>
+<p><strong> Error Responses: </strong> </p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -439,24 +559,24 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Update failed&quot;
+    &quot;msg&quot;: &quot;update failed&quot;
 }
 </code></pre>
 
-<h1 id="delete-project">Delete Project</h1>
-<p>Delete a Project by Id</p>
-<p><strong>URL</strong> : <code>/api/project/:Id</code></p>
+<h1 id="delete-workorderpart">Delete WorkOrderPart</h1>
+<p>Delete a WorkOrderPart by Id</p>
+<p><strong>URL</strong> : <code>/api/workorderpart/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the Project.</p>
-<p><strong> Success Response: </strong></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorderpart.</p>
+<p><strong> Success Response:</strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Deleted successfully!&quot;,
+    &quot;msg&quot;: &quot;WorkOrderPart deleted successfully!&quot;,
     data: null
 }
 </code></pre>
@@ -496,10 +616,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ScheduledMaintenance/index.html" class="btn btn-neutral float-right" title="ScheduledMaintenance">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../WorkOrderStatusTransition/index.html" class="btn btn-neutral float-right" title="WorkOrderStatusTransition">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../MeterReadingUnit/index.html" class="btn btn-neutral" title="MeterReadingUnit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../WorkOrderTask/index.html" class="btn btn-neutral" title="WorkOrderTask"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -525,10 +645,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../MeterReadingUnit/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../WorkOrderTask/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../ScheduledMaintenance/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../WorkOrderStatusTransition/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
