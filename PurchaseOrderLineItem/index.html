@@ -116,16 +116,16 @@
     <li class="toctree-l2"><a href="#create-purchaseorderlineitem">Create PurchaseOrderLineItem</a></li>
     
 
-    <li class="toctree-l2"><a href="#get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</a></li>
+    <li class="toctree-l2"><a href="#get-all-purchaseorderlineitem-list">Get all PurchaseOrderLineItem list</a></li>
     
 
-    <li class="toctree-l2"><a href="#get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</a></li>
+    <li class="toctree-l2"><a href="#get-single-purchaseorderlineitem-by-id">Get Single PurchaseOrderLineItem By Id</a></li>
     
 
-    <li class="toctree-l2"><a href="#update-scheduledmaintenace">Update ScheduledMaintenace</a></li>
+    <li class="toctree-l2"><a href="#update-purchaseorderlineitem">Update PurchaseOrderLineItem</a></li>
     
 
-    <li class="toctree-l2"><a href="#delete-scheduledmaintenace">Delete ScheduledMaintenace</a></li>
+    <li class="toctree-l2"><a href="#delete-purchaseorderlineitem">Delete PurchaseOrderLineItem</a></li>
     
 
     </ul>
@@ -396,9 +396,9 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Pu
 }
 </code></pre>
 
-<h1 id="get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</h1>
-<p>Get the all registered ScheduledMaintenace list.</p>
-<p><strong>URL</strong> : <code>/api/scheduledmaintenace</code></p>
+<h1 id="get-all-purchaseorderlineitem-list">Get all PurchaseOrderLineItem list</h1>
+<p>Get the all registered PurchaseOrderLineItem list.</p>
+<p><strong>URL</strong> : <code>/api/purchaseorderlineitem</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
@@ -471,13 +471,13 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Pu
 }
 </code></pre>
 
-<h1 id="get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</h1>
-<p>Get a single ScheduledMaintenace by id if current ScheduledMaintenace was registered on it.</p>
+<h1 id="get-single-purchaseorderlineitem-by-id">Get Single PurchaseOrderLineItem By Id</h1>
+<p>Get a single PurchaseOrderLineItem by id if current PurchaseOrderLineItem was registered on it.</p>
 <p><strong>URL</strong> : <code>/api/purchaseorderlineitem/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the PurchaseOrderLineItem.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
@@ -535,7 +535,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Pu
 </code></pre>
 
 <p><strong> Or </strong></p>
-<p><strong>Condition</strong> : If ScheduledMaintenace does not exist on server.</p>
+<p><strong>Condition</strong> : If PurchaseOrderLineItem does not exist on server.</p>
 <p><strong>Code</strong> : <code>404 Not Found</code></p>
 <ul>
 <li>Content example </li>
@@ -546,13 +546,13 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Pu
 }
 </code></pre>
 
-<h1 id="update-scheduledmaintenace">Update ScheduledMaintenace</h1>
-<p>Update the ScheduledMaintenace by Id</p>
+<h1 id="update-purchaseorderlineitem">Update PurchaseOrderLineItem</h1>
+<p>Update the PurchaseOrderLineItem by Id</p>
 <p><strong>URL</strong> : <code>/api/purchaseorderlineitem/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the PurchaseOrderLineItem.</p>
 <table>
 <thead>
 <tr>
@@ -722,13 +722,13 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Pu
 }
 </code></pre>
 
-<h1 id="delete-scheduledmaintenace">Delete ScheduledMaintenace</h1>
-<p>Delete a ScheduledMaintenace by Id</p>
+<h1 id="delete-purchaseorderlineitem">Delete PurchaseOrderLineItem</h1>
+<p>Delete a PurchaseOrderLineItem by Id</p>
 <p><strong>URL</strong> : <code>/api/purchaseorderlineitem/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the PurchaseOrderLineItem.</p>
 <p><strong>  Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
@@ -820,5 +820,5 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Pu
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-12-24 14:37:45
+Build Date UTC : 2020-12-24 14:52:06
 -->

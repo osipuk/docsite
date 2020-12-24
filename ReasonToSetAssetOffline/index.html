@@ -126,16 +126,16 @@
     <li class="toctree-l2"><a href="#create-reasontosetassetoffline">Create ReasonToSetAssetOffline</a></li>
     
 
-    <li class="toctree-l2"><a href="#get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</a></li>
+    <li class="toctree-l2"><a href="#get-all-reasontosetassetoffline-list">Get all ReasonToSetAssetOffline list</a></li>
     
 
-    <li class="toctree-l2"><a href="#get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</a></li>
+    <li class="toctree-l2"><a href="#get-single-reasontosetassetoffline-by-id">Get Single ReasonToSetAssetOffline By Id</a></li>
     
 
-    <li class="toctree-l2"><a href="#update-scheduledmaintenace">Update ScheduledMaintenace</a></li>
+    <li class="toctree-l2"><a href="#update-reasontosetassetoffline">Update ReasonToSetAssetOffline</a></li>
     
 
-    <li class="toctree-l2"><a href="#delete-scheduledmaintenace">Delete ScheduledMaintenace</a></li>
+    <li class="toctree-l2"><a href="#delete-reasontosetassetoffline">Delete ReasonToSetAssetOffline</a></li>
     
 
     </ul>
@@ -286,9 +286,9 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Re
 }
 </code></pre>
 
-<h1 id="get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</h1>
-<p>Get the all registered ScheduledMaintenace list.</p>
-<p><strong>URL</strong> : <code>/api/scheduledmaintenace</code></p>
+<h1 id="get-all-reasontosetassetoffline-list">Get all ReasonToSetAssetOffline list</h1>
+<p>Get the all registered ReasonToSetAssetOffline list.</p>
+<p><strong>URL</strong> : <code>/api/reasontosetassetoffline</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
@@ -339,13 +339,13 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Re
 }
 </code></pre>
 
-<h1 id="get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</h1>
-<p>Get a single ScheduledMaintenace by id if current ScheduledMaintenace was registered on it.</p>
+<h1 id="get-single-reasontosetassetoffline-by-id">Get Single ReasonToSetAssetOffline By Id</h1>
+<p>Get a single ReasonToSetAssetOffline by id if current ReasonToSetAssetOffline was registered on it.</p>
 <p><strong>URL</strong> : <code>/api/reasontosetassetoffline/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ReasonToSetAssetOffline.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
@@ -381,7 +381,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Re
 </code></pre>
 
 <p><strong> Or </strong></p>
-<p><strong>Condition</strong> : If ScheduledMaintenace does not exist on server.</p>
+<p><strong>Condition</strong> : If ReasonToSetAssetOffline does not exist on server.</p>
 <p><strong>Code</strong> : <code>404 Not Found</code></p>
 <ul>
 <li>Content example </li>
@@ -392,13 +392,13 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Re
 }
 </code></pre>
 
-<h1 id="update-scheduledmaintenace">Update ScheduledMaintenace</h1>
-<p>Update the ScheduledMaintenace by Id</p>
+<h1 id="update-reasontosetassetoffline">Update ReasonToSetAssetOffline</h1>
+<p>Update the ReasonToSetAssetOffline by Id</p>
 <p><strong>URL</strong> : <code>/api/reasontosetassetoffline/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ReasonToSetAssetOffline.</p>
 <table>
 <thead>
 <tr>
@@ -458,13 +458,13 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Re
 }
 </code></pre>
 
-<h1 id="delete-scheduledmaintenace">Delete ScheduledMaintenace</h1>
-<p>Delete a ScheduledMaintenace by Id</p>
+<h1 id="delete-reasontosetassetoffline">Delete ReasonToSetAssetOffline</h1>
+<p>Delete a ReasonToSetAssetOffline by Id</p>
 <p><strong>URL</strong> : <code>/api/reasontosetassetoffline/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ReasonToSetAssetOffline.</p>
 <p><strong>  Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
@@ -556,5 +556,5 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Re
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-12-24 14:37:45
+Build Date UTC : 2020-12-24 14:52:06
 -->
