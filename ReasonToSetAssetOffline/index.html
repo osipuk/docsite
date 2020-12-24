@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>WorkOrderPart - CMMS Api Doc</title>
+  <title>ReasonToSetAssetOffline - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "WorkOrderPart";
-    var mkdocs_page_input_path = "WorkOrderPart\\index.md";
+    var mkdocs_page_name = "ReasonToSetAssetOffline";
+    var mkdocs_page_input_path = "ReasonToSetAssetOffline\\index.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -118,9 +118,27 @@
     <a class="" href="../PurchaseOrderStatus/index.html">PurchaseOrderStatus</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../ReasonToSetAssetOffline/index.html">ReasonToSetAssetOffline</a>
+    <a class="current" href="index.html">ReasonToSetAssetOffline</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-reasontosetassetoffline">Create ReasonToSetAssetOffline</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-scheduledmaintenace">Update ScheduledMaintenace</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-scheduledmaintenace">Delete ScheduledMaintenace</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -158,27 +176,9 @@
     <a class="" href="../WorkOrderTask/index.html">WorkOrderTask</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">WorkOrderPart</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#create-workorderpart">Create WorkOrderPart</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-all-workorderpart-list">Get all workorderpart list</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-single-workorderpart-by-id">Get Single WorkOrderPart By Id</a></li>
-    
-
-    <li class="toctree-l2"><a href="#update-workorderpart">Update WorkOrderPart</a></li>
-    
-
-    <li class="toctree-l2"><a href="#delete-workorderpart">Delete WorkOrderPart</a></li>
-    
-
-    </ul>
+    <a class="" href="../WorkOrderPart/index.html">WorkOrderPart</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -208,7 +208,7 @@
     
       
     
-    <li>WorkOrderPart</li>
+    <li>ReasonToSetAssetOffline</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -218,10 +218,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-workorderpart">Create WorkOrderPart</h1>
-<p>This object is used to represent work orders. A work order is a set of maintenance tasks that have to be executed by some assigned users on a given asset. </p>
-<p>Create an WorkOrderPart if  WorkOrderPart does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/workorderpart</code></p>
+                <h1 id="create-reasontosetassetoffline">Create ReasonToSetAssetOffline</h1>
+<p>A ReasonToSetAssetOffline represents a Maintenance job that is to be done and executed by the assigned user. It contains information about the ReasonToSetAssetOffline Maintenance Type, Date created, Priority level, Site it resides in, Asset(s) involved, and assigned User.
+See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and ReasonToSetAssetOfflineAsset objects for more details and information. You can have multiple ReasonToSetAssetOffline associated in your CMMS.</p>
+<p>Create a ReasonToSetAssetOffline if  ReasonToSetAssetOffline does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/reasontosetassetoffline</code></p>
 <p><strong>Method</strong> : <code>POST</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -235,83 +236,25 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">intWorkOrderID</td>
-<td align="left">Integer</td>
-<td>The ID of the work order the part will be needed for.</td>
-</tr>
-<tr>
-<td align="left">intAssetID</td>
-<td align="left">Integer</td>
-<td>The ID of the asset the part will be needed for. For getting possible values, please refer to the Asset section.</td>
-</tr>
-<tr>
-<td align="left">intStockID</td>
-<td align="left">Integer</td>
-<td>The ID of the stock representing the part. For getting possible values, please refer to the Stock section.</td>
-</tr>
-<tr>
-<td align="left">intPartID</td>
-<td align="left">Integer</td>
-<td>The ID of the asset associated with the stock that represents the part. For getting possible values, please refer to the Asset section.</td>
-</tr>
-<tr>
-<td align="left">qtySuggestedQuantity</td>
-<td align="left">Integer</td>
-<td>This field can be used to indicate the quantity that is going to be used for this part to perform the work order.</td>
-</tr>
-<tr>
-<td align="left">qtyActualQuantityUsed</td>
-<td align="left">integer</td>
-<td>This field can be used to indicate the quantity that was actually used to performed the work order.</td>
+<td align="left">strName</td>
+<td align="left">string</td>
+<td>A string that identifies the name of the ReasonToSetAssetOffline.</td>
 </tr>
 <tr>
 <td align="left">intUpdated</td>
-<td align="left">integer</td>
+<td align="left">Integer</td>
 <td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
-</tr>
-<tr>
-<td align="left">dv_intWorkOrderID</td>
-<td align="left">string</td>
-<td>The code of the work order. For example : "WO 2009-09-01.0010.00048.Any". For more details, please refer to the WorkOrder section.</td>
-</tr>
-<tr>
-<td align="left">dv_intPartID</td>
-<td align="left">String</td>
-<td>The name and the code of the asset associated with the stock that represents the part.</td>
-</tr>
-<tr>
-<td align="left">dv_intAssetID</td>
-<td align="left">String</td>
-<td>The name and the code of the asset the part will be used to perform the work order on.</td>
-</tr>
-<tr>
-<td align="left">dv_intStockID</td>
-<td align="left">String</td>
-<td>The display value for the stock associated with the part. For example "Asset (asset code) at facility x aisle y row z".</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Data example </li>
-</ul>
-<pre><code class="json">{
-    &quot;intPriorityID&quot;: 4156,
-    &quot;intSiteID&quot;: 9,
-    &quot;strCode&quot;: &quot;2009-02-05.0004.00004&quot;,
-    &quot;strCompletionNotes&quot;: &quot;strCompletionNotes&quot;,
-    &quot;intRCACauseID&quot;: 4
-    ... ...
-}
-</code></pre>
-
-<p><strong> Success Response: </strong></p>
+<p><strong>Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;WorkOrderPart added successfully!&quot;,
-    &quot;data&quot;: {id: &quot;4rt8a89c24753232419483c&quot;}
+   &quot;msg&quot;: &quot;Created successfully!&quot;,
+    &quot;data&quot;: {id: &quot;5&quot;}
     }
 </code></pre>
 
@@ -319,7 +262,7 @@
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
-<li>Resonse example </li>
+<li>Resonse example</li>
 </ul>
 <pre><code class="json">{
     &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
@@ -339,18 +282,13 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;intWorkOrderStatusID is required&quot;
-}
-</code></pre>
-
-<pre><code class="json">{
     &quot;msg&quot;: &quot;Create failed&quot;
 }
 </code></pre>
 
-<h1 id="get-all-workorderpart-list">Get all workorderpart list</h1>
-<p>Get the all registered workorderpart list.</p>
-<p><strong>URL</strong> : <code>/api/workorderpart</code></p>
+<h1 id="get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</h1>
+<p>Get the all registered ScheduledMaintenace list.</p>
+<p><strong>URL</strong> : <code>/api/scheduledmaintenace</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
@@ -360,17 +298,12 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;WorkOrderPart list found!&quot;,
+    &quot;msg&quot;: &quot;Found!&quot;,
     &quot;data&quot;: [
         {
-            &quot;_id&quot;: &quot;5f6a6f90d9741d152c754178&quot;,
-            &quot;intWorkOrderID&quot;: 11,
-            &quot;intAssetID&quot;: 22,
-            &quot;intStockID&quot;: 33,
-            &quot;intPartID&quot;: null,
-            &quot;qtySuggestedQuantity&quot;: &quot;&quot;,
-            &quot;qtyActualQuantityUsed&quot;: &quot;&quot;,
-            &quot;intUpdated&quot;: &quot;&quot;,
+            &quot;_id&quot;: &quot;5&quot;,
+            &quot;strName&quot;:&quot;name ...&quot;,
+            &quot;intUpdated&quot;:Integer,      
             &quot;__v&quot;: 0
         },
         ...
@@ -402,34 +335,29 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Internal Server error.&quot;
+    &quot;msg&quot;: &quot;Internal Server error&quot;
 }
 </code></pre>
 
-<h1 id="get-single-workorderpart-by-id">Get Single WorkOrderPart By Id</h1>
-<p>Get a single WorkOrderPart by id if current workorderpart was registered on it.</p>
-<p><strong>URL</strong> : <code>/api/workorderpart/:Id</code></p>
+<h1 id="get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</h1>
+<p>Get a single ScheduledMaintenace by id if current ScheduledMaintenace was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/reasontosetassetoffline/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorderpart.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Workorderpart found!&quot;,
+    &quot;msg&quot;: &quot;Found!&quot;,
     &quot;data&quot;: 
         {
-            &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
-            &quot;intWorkOrderID&quot;: 1234,
-            &quot;intAssetID&quot;: 5678,
-            &quot;intStockID&quot;: 1111,
-            &quot;intPartID&quot;: 3434,
-            &quot;qtySuggestedQuantity&quot;: 2,
-            &quot;qtyActualQuantityUsed&quot;: 4
-            ...
+            &quot;_id&quot;: &quot;5&quot;,
+            &quot;strName&quot;:&quot;name ...&quot;,
+            &quot;intUpdated&quot;:Integer          
         }
 }
 </code></pre>
@@ -453,24 +381,24 @@
 </code></pre>
 
 <p><strong> Or </strong></p>
-<p><strong>Condition</strong> : If WorkOrderPart does not exist on server.</p>
+<p><strong>Condition</strong> : If ScheduledMaintenace does not exist on server.</p>
 <p><strong>Code</strong> : <code>404 Not Found</code></p>
 <ul>
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;WorkOrderPart not found&quot;, 
+   &quot;msg&quot;: &quot;Not found&quot;, 
    &quot;data&quot;:null
 }
 </code></pre>
 
-<h1 id="update-workorderpart">Update WorkOrderPart</h1>
-<p>Update the WorkOrderPart by Id</p>
-<p><strong>URL</strong> : <code>/api/workorderpart/:Id</code></p>
+<h1 id="update-scheduledmaintenace">Update ScheduledMaintenace</h1>
+<p>Update the ScheduledMaintenace by Id</p>
+<p><strong>URL</strong> : <code>/api/reasontosetassetoffline/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorder.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
 <table>
 <thead>
 <tr>
@@ -481,86 +409,28 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">intWorkOrderID</td>
-<td align="left">Integer</td>
-<td>The ID of the work order the part will be needed for.</td>
-</tr>
-<tr>
-<td align="left">intAssetID</td>
-<td align="left">Integer</td>
-<td>The ID of the asset the part will be needed for. For getting possible values, please refer to the Asset section.</td>
-</tr>
-<tr>
-<td align="left">intStockID</td>
-<td align="left">Integer</td>
-<td>The ID of the stock representing the part. For getting possible values, please refer to the Stock section.</td>
-</tr>
-<tr>
-<td align="left">intPartID</td>
-<td align="left">Integer</td>
-<td>The ID of the asset associated with the stock that represents the part. For getting possible values, please refer to the Asset section.</td>
-</tr>
-<tr>
-<td align="left">qtySuggestedQuantity</td>
-<td align="left">Integer</td>
-<td>This field can be used to indicate the quantity that is going to be used for this part to perform the work order.</td>
-</tr>
-<tr>
-<td align="left">qtyActualQuantityUsed</td>
-<td align="left">integer</td>
-<td>This field can be used to indicate the quantity that was actually used to performed the work order.</td>
+<td align="left">strName</td>
+<td align="left">string</td>
+<td>A string that identifies the name of the ReasonToSetAssetOffline.</td>
 </tr>
 <tr>
 <td align="left">intUpdated</td>
-<td align="left">integer</td>
+<td align="left">Integer</td>
 <td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
-</tr>
-<tr>
-<td align="left">dv_intWorkOrderID</td>
-<td align="left">string</td>
-<td>The code of the work order. For example : "WO 2009-09-01.0010.00048.Any". For more details, please refer to the WorkOrder section.</td>
-</tr>
-<tr>
-<td align="left">dv_intPartID</td>
-<td align="left">String</td>
-<td>The name and the code of the asset associated with the stock that represents the part.</td>
-</tr>
-<tr>
-<td align="left">dv_intAssetID</td>
-<td align="left">String</td>
-<td>The name and the code of the asset the part will be used to perform the work order on.</td>
-</tr>
-<tr>
-<td align="left">dv_intStockID</td>
-<td align="left">String</td>
-<td>The display value for the stock associated with the part. For example "Asset (asset code) at facility x aisle y row z".</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Data example </li>
-</ul>
-<pre><code class="json">{
-    &quot;intWorkOrderID&quot;: 556,
-    &quot;intAssetID&quot;: 789,
-    &quot;intStockID&quot;: 98786,
-    &quot;intPartID&quot;: 8564,
-    &quot;qtySuggestedQuantity&quot;:545&quot;
-    ... ...
-}
-</code></pre>
-
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
-<li>Resonse example</li>
+<li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;WorkOrderPart updated successfully!&quot;
+   &quot;msg&quot;: &quot;Updated successfully!&quot;
     }
 </code></pre>
 
-<p><strong> Error Responses: </strong> </p>
+<p><strong> Error Responses:</strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -584,29 +454,29 @@
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;update failed&quot;
+    &quot;msg&quot;: &quot;Update failed&quot;
 }
 </code></pre>
 
-<h1 id="delete-workorderpart">Delete WorkOrderPart</h1>
-<p>Delete a WorkOrderPart by Id</p>
-<p><strong>URL</strong> : <code>/api/workorderpart/:Id</code></p>
+<h1 id="delete-scheduledmaintenace">Delete ScheduledMaintenace</h1>
+<p>Delete a ScheduledMaintenace by Id</p>
+<p><strong>URL</strong> : <code>/api/reasontosetassetoffline/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorderpart.</p>
-<p><strong> Success Response:</strong></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>  Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
-<li>Resonse example </li>
+<li>Resonse example</li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;WorkOrderPart deleted successfully!&quot;,
+    &quot;msg&quot;: &quot;Deleted successfully!&quot;,
     data: null
 }
 </code></pre>
 
-<p><strong> Error Responses: </strong></p>
+<p><strong> Error Responses : </strong></p>
 <p><strong>Code</strong> : <code>401 Unauthorized</code></p>
 <p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
 <ul>
@@ -641,10 +511,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../WorkOrderStatusTransition/index.html" class="btn btn-neutral float-right" title="WorkOrderStatusTransition">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ReasonToSetAssetOnline/index.html" class="btn btn-neutral float-right" title="ReasonToSetAssetOnline">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../WorkOrderTask/index.html" class="btn btn-neutral" title="WorkOrderTask"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../PurchaseOrderStatus/index.html" class="btn btn-neutral" title="PurchaseOrderStatus"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -670,10 +540,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../WorkOrderTask/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../PurchaseOrderStatus/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../WorkOrderStatusTransition/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ReasonToSetAssetOnline/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

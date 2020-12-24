@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>PurchaseOrder - CMMS Api Doc</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "PurchaseOrder";
+    var mkdocs_page_input_path = "PurchaseOrder\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> CMMS Api Doc</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Account</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Asset/index.html">Asset</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetBusiness/index.html">AssetBusiness</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetCategory/index.html">AssetCategory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEvent/index.html">AssetEvent</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../AssetEventType/index.html">AssetEventType</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Business/index.html">Business</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ChargeDepartment/index.html">ChargeDepartment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MeterReading/index.html">MeterReading</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../MeterReadingUnit/index.html">MeterReadingUnit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Project/index.html">Project</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">PurchaseOrder</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-purchaseorder">Create PurchaseOrder</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-scheduledmaintenace">Update ScheduledMaintenace</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-scheduledmaintenace">Delete ScheduledMaintenace</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PurchaseOrderLineItem/index.html">PurchaseOrderLineItem</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PurchaseOrderStatus/index.html">PurchaseOrderStatus</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ReasonToSetAssetOffline/index.html">ReasonToSetAssetOffline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ReasonToSetAssetOnline/index.html">ReasonToSetAssetOnline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ScheduledMaintenance/index.html">ScheduledMaintenance</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ScheduleTrigger/index.html">ScheduleTrigger</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../User/index.html">User</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrder/index.html">WorkOrder</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderStatus/index.html">WorkOrderStatus</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderTask/index.html">WorkOrderTask</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderPart/index.html">WorkOrderPart</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../WorkOrderStatusTransition/index.html">WorkOrderStatusTransition</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CMMS Api Doc</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>PurchaseOrder</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="create-purchaseorder">Create PurchaseOrder</h1>
+<p>A PurchaseOrder represents a Maintenance job that is to be done and executed by the assigned user. It contains information about the PurchaseOrder Maintenance Type, Date created, Priority level, Site it resides in, Asset(s) involved, and assigned User.
+See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and PurchaseOrderAsset objects for more details and information. You can have multiple PurchaseOrder associated in your CMMS.</p>
+<p>Create a PurchaseOrder if  PurchaseOrder does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/purchaseorder</code></p>
+<p><strong>Method</strong> : <code>POST</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">dtmDateCreated</td>
+<td align="left">Date</td>
+<td>A date that represents when the purchase order was created.</td>
+</tr>
+<tr>
+<td align="left">dtmDateExpectedDelivery</td>
+<td align="left">Date</td>
+<td>A date that represents when the purchase order is expected to be delivered.</td>
+</tr>
+<tr>
+<td align="left">dtmDateSubmitted</td>
+<td align="left">Date</td>
+<td>A date that represents when the purchase order was submitted.</td>
+</tr>
+<tr>
+<td align="left">intBillingTermID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines a billing term for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intChargeDepartmentID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines the Charge Department. Please refer to ChargeDepartment</td>
+</tr>
+<tr>
+<td align="left">intCode</td>
+<td align="left">Integer</td>
+<td>An integer that represents the code of the Purchase Order object e.g. For purchase order PO#33, code = 33</td>
+</tr>
+<tr>
+<td align="left">intCreatedByUserID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines the user who created the purchase order record. Please refer to User</td>
+</tr>
+<tr>
+<td align="left">intPurchaseOrderStatusID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines the purchase order current status. Please refer to PurchaseOrderStatus.</td>
+</tr>
+<tr>
+<td align="left">intSendToSupplierMethod</td>
+<td align="left">Integer</td>
+<td>The sending method of the purchase order item. The possible values are 0 for SEND_TO_SUPPLIER_BY_EMAIL, 1 for SEND_TO_SUPPLIER_BY_FAX, 2 for SEND_TO_SUPPLIER_BY_MAIL and 3 for SEND_TO_SUPPLIER_BY_SUPPLIER_WEBSITE</td>
+</tr>
+<tr>
+<td align="left">intSiteID</td>
+<td align="left">Integer</td>
+<td>The ID of the site where the purchase order will be shipped. A site is an asset itself, so for possible values, please refer to the Asset</td>
+</tr>
+<tr>
+<td align="left">intSupplierID</td>
+<td align="left">Integer</td>
+<td>The ID of the business that fulfills the purchase order. Please refer to Business</td>
+</tr>
+<tr>
+<td align="left">intUpdated</td>
+<td align="left">Integer</td>
+<td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
+</tr>
+<tr>
+<td align="left">dtmDateLastUpdated</td>
+<td align="left">Date</td>
+<td>A date that represent when purchase order was last updated.</td>
+</tr>
+<tr>
+<td align="left">dtmDateReceived</td>
+<td align="left">Date</td>
+<td>The date the purchase order was received.</td>
+</tr>
+<tr>
+<td align="left">dtmDateRequiredBy</td>
+<td align="left">Date</td>
+<td>The date the purchase order was required.</td>
+</tr>
+<tr>
+<td align="left">intAccountID</td>
+<td align="left">integer</td>
+<td>ID of the account that is associated with the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intAssetID</td>
+<td align="left">integer</td>
+<td>ID of the asset/site associated with the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intBillToCountryID</td>
+<td align="left">integer</td>
+<td>ID of the Country of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intBillToID</td>
+<td align="left">integer</td>
+<td>ID of the facility to be billed for the purchase order. See Asset</td>
+</tr>
+<tr>
+<td align="left">intLastUpdatedUserID</td>
+<td align="left">integer</td>
+<td>ID of the user that performed the last update on the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intPurchaseCurrencyID</td>
+<td align="left">integer</td>
+<td>ID of the currency in which the purchase order financial transaction is to be performed.</td>
+</tr>
+<tr>
+<td align="left">intShipToCountryID</td>
+<td align="left">integer</td>
+<td>ID of the Country to which the purchase order will be shipped.</td>
+</tr>
+<tr>
+<td align="left">intShipToID</td>
+<td align="left">integer</td>
+<td>ID of the facility that will receive shipment of purchase order. See Asset</td>
+</tr>
+<tr>
+<td align="left">intSupplierCountryID</td>
+<td align="left">integer</td>
+<td>ID of the Country of the supplier.</td>
+</tr>
+<tr>
+<td align="left">intWorkOrderID</td>
+<td align="left">integer</td>
+<td>ID of WorkOrder that is associated with the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToAddress</td>
+<td align="left">string</td>
+<td>Address of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToCity</td>
+<td align="left">string</td>
+<td>City information of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToPostalCode</td>
+<td align="left">string</td>
+<td>Postal code information of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToProvince</td>
+<td align="left">string</td>
+<td>Province of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strPurchaseOrderReference</td>
+<td align="left">string</td>
+<td>Reference number/information for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strShipToAddress</td>
+<td align="left">string</td>
+<td>Address of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strShipToCity</td>
+<td align="left">string</td>
+<td>City of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strShipToPostalCode</td>
+<td align="left">string</td>
+<td>Postal code of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strShipToProvince</td>
+<td align="left">string</td>
+<td>Province of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierAddress</td>
+<td align="left">string</td>
+<td>Address of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierCity</td>
+<td align="left">string</td>
+<td>City of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierPostalCode</td>
+<td align="left">string</td>
+<td>Postal code of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierProvince</td>
+<td align="left">string</td>
+<td>Province of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">intLocationID</td>
+<td align="left">integer</td>
+<td>The id of the location for the PurchaseOrder (Used in conjunction with the Asset object).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Created successfully!&quot;,
+    &quot;data&quot;: {id: &quot;5&quot;}
+    }
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example</li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Create failed&quot;
+}
+</code></pre>
+
+<h1 id="get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</h1>
+<p>Get the all registered ScheduledMaintenace list.</p>
+<p><strong>URL</strong> : <code>/api/scheduledmaintenace</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong>  : <code>Authorization:{jwt-token}</code></p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;_id&quot;: &quot;5&quot;,
+            &quot;dtmDateCreated&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;dtmDateExpectedDelivery&quot;:&quot;Date&quot;,
+            &quot;dtmDateSubmitted&quot;:&quot;Date&quot;,
+            &quot;intBillingTermID&quot;:&quot;Integer&quot;,
+            &quot;intChargeDepartmentID&quot;:4,
+            &quot;intCode&quot;:&quot;Integer&quot;,
+            &quot;intCreatedByUserID&quot;:33,
+            &quot;intPurchaseOrderStatusID&quot;:&quot;Integer&quot;,
+            &quot;intSendToSupplierMethod&quot;:1,
+            &quot;intSiteID&quot;:&quot;Integer&quot;,
+            &quot;intSupplierID&quot;:33,
+            &quot;intUpdated&quot;:&quot;Integer&quot;,
+            &quot;dtmDateLastUpdated&quot;:&quot;Date&quot;,
+            &quot;dtmDateReceived&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;dtmDateRequiredBy&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;intAccountID&quot;:33,
+            &quot;intAssetID&quot;:33,
+            &quot;intBillToCountryID&quot;:33,
+            &quot;intBillToID&quot;:33,
+            &quot;intLastUpdatedUserID&quot;:33,
+            &quot;intPurchaseCurrencyID&quot;:33,
+            &quot;intShipToCountryID&quot;:33,
+            &quot;intShipToID&quot;:33,
+            &quot;intSupplierCountryID&quot;:33,
+            &quot;intWorkOrderID&quot;:33,            
+            &quot;strBillToAddress&quot;:&quot;address1&quot;,
+            &quot;strBillToCity&quot;:&quot;city_name&quot;,
+            &quot;strBillToPostalCode&quot;:string,
+            &quot;strBillToProvince&quot;:string,
+            &quot;strPurchaseOrderReference&quot;:string,
+            &quot;strShipToAddress&quot;:string,
+            &quot;strShipToCity&quot;:string,
+            &quot;strShipToPostalCode&quot;:&quot;postcode&quot;,
+            &quot;strShipToProvince&quot;:string,
+            &quot;strSupplierAddress&quot;:string,
+            &quot;strSupplierCity&quot;:string,
+            &quot;strSupplierPostalCode&quot;:string,
+            &quot;strSupplierProvince&quot;:string,       
+            &quot;intLocationID&quot;:&quot;Integer&quot; , 
+            &quot;__v&quot;: 0
+        },
+        ...
+    ]
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : Internal Server Error.</p>
+<p><strong>Code</strong> : <code>500</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Internal Server error&quot;
+}
+</code></pre>
+
+<h1 id="get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</h1>
+<p>Get a single ScheduledMaintenace by id if current ScheduledMaintenace was registered on it.</p>
+<p><strong>URL</strong> : <code>/api/purchaseorder/:Id</code></p>
+<p><strong>Method</strong> : <code>GET</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Found!&quot;,
+    &quot;data&quot;: 
+        {
+            &quot;_id&quot;: &quot;5&quot;,
+            &quot;dtmDateCreated&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;dtmDateExpectedDelivery&quot;:&quot;Date&quot;,
+            &quot;dtmDateSubmitted&quot;:&quot;Date&quot;,
+            &quot;intBillingTermID&quot;:&quot;Integer&quot;,
+            &quot;intChargeDepartmentID&quot;:4,
+            &quot;intCode&quot;:&quot;Integer&quot;,
+            &quot;intCreatedByUserID&quot;:33,
+            &quot;intPurchaseOrderStatusID&quot;:&quot;Integer&quot;,
+            &quot;intSendToSupplierMethod&quot;:1,
+            &quot;intSiteID&quot;:&quot;Integer&quot;,
+            &quot;intSupplierID&quot;:33,
+            &quot;intUpdated&quot;:&quot;Integer&quot;,
+            &quot;dtmDateLastUpdated&quot;:&quot;Date&quot;,
+            &quot;dtmDateReceived&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;dtmDateRequiredBy&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;intAccountID&quot;:33,
+            &quot;intAssetID&quot;:33,
+            &quot;intBillToCountryID&quot;:33,
+            &quot;intBillToID&quot;:33,
+            &quot;intLastUpdatedUserID&quot;:33,
+            &quot;intPurchaseCurrencyID&quot;:33,
+            &quot;intShipToCountryID&quot;:33,
+            &quot;intShipToID&quot;:33,
+            &quot;intSupplierCountryID&quot;:33,
+            &quot;intWorkOrderID&quot;:33,            
+            &quot;strBillToAddress&quot;:&quot;address1&quot;,
+            &quot;strBillToCity&quot;:&quot;city_name&quot;,
+            &quot;strBillToPostalCode&quot;:string,
+            &quot;strBillToProvince&quot;:string,
+            &quot;strPurchaseOrderReference&quot;:string,
+            &quot;strShipToAddress&quot;:string,
+            &quot;strShipToCity&quot;:string,
+            &quot;strShipToPostalCode&quot;:&quot;postcode&quot;,
+            &quot;strShipToProvince&quot;:string,
+            &quot;strSupplierAddress&quot;:string,
+            &quot;strSupplierCity&quot;:string,
+            &quot;strSupplierPostalCode&quot;:string,
+            &quot;strSupplierProvince&quot;:string,       
+            &quot;intLocationID&quot;:&quot;Integer&quot;            
+        }
+}
+</code></pre>
+
+<p><strong> Error Responses: </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong> Or </strong></p>
+<p><strong>Condition</strong> : If ScheduledMaintenace does not exist on server.</p>
+<p><strong>Code</strong> : <code>404 Not Found</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Not found&quot;, 
+   &quot;data&quot;:null
+}
+</code></pre>
+
+<h1 id="update-scheduledmaintenace">Update ScheduledMaintenace</h1>
+<p>Update the ScheduledMaintenace by Id</p>
+<p><strong>URL</strong> : <code>/api/purchaseorder/:Id</code></p>
+<p><strong>Method</strong> : <code>PUT</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">dtmDateCreated</td>
+<td align="left">Date</td>
+<td>A date that represents when the purchase order was created.</td>
+</tr>
+<tr>
+<td align="left">dtmDateExpectedDelivery</td>
+<td align="left">Date</td>
+<td>A date that represents when the purchase order is expected to be delivered.</td>
+</tr>
+<tr>
+<td align="left">dtmDateSubmitted</td>
+<td align="left">Date</td>
+<td>A date that represents when the purchase order was submitted.</td>
+</tr>
+<tr>
+<td align="left">intBillingTermID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines a billing term for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intChargeDepartmentID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines the Charge Department. Please refer to ChargeDepartment</td>
+</tr>
+<tr>
+<td align="left">intCode</td>
+<td align="left">Integer</td>
+<td>An integer that represents the code of the Purchase Order object e.g. For purchase order PO#33, code = 33</td>
+</tr>
+<tr>
+<td align="left">intCreatedByUserID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines the user who created the purchase order record. Please refer to User</td>
+</tr>
+<tr>
+<td align="left">intPurchaseOrderStatusID</td>
+<td align="left">Integer</td>
+<td>An integer that uniquely defines the purchase order current status. Please refer to PurchaseOrderStatus.</td>
+</tr>
+<tr>
+<td align="left">intSendToSupplierMethod</td>
+<td align="left">Integer</td>
+<td>The sending method of the purchase order item. The possible values are 0 for SEND_TO_SUPPLIER_BY_EMAIL, 1 for SEND_TO_SUPPLIER_BY_FAX, 2 for SEND_TO_SUPPLIER_BY_MAIL and 3 for SEND_TO_SUPPLIER_BY_SUPPLIER_WEBSITE</td>
+</tr>
+<tr>
+<td align="left">intSiteID</td>
+<td align="left">Integer</td>
+<td>The ID of the site where the purchase order will be shipped. A site is an asset itself, so for possible values, please refer to the Asset</td>
+</tr>
+<tr>
+<td align="left">intSupplierID</td>
+<td align="left">Integer</td>
+<td>The ID of the business that fulfills the purchase order. Please refer to Business</td>
+</tr>
+<tr>
+<td align="left">intUpdated</td>
+<td align="left">Integer</td>
+<td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
+</tr>
+<tr>
+<td align="left">dtmDateLastUpdated</td>
+<td align="left">Date</td>
+<td>A date that represent when purchase order was last updated.</td>
+</tr>
+<tr>
+<td align="left">dtmDateReceived</td>
+<td align="left">Date</td>
+<td>The date the purchase order was received.</td>
+</tr>
+<tr>
+<td align="left">dtmDateRequiredBy</td>
+<td align="left">Date</td>
+<td>The date the purchase order was required.</td>
+</tr>
+<tr>
+<td align="left">intAccountID</td>
+<td align="left">integer</td>
+<td>ID of the account that is associated with the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intAssetID</td>
+<td align="left">integer</td>
+<td>ID of the asset/site associated with the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intBillToCountryID</td>
+<td align="left">integer</td>
+<td>ID of the Country of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intBillToID</td>
+<td align="left">integer</td>
+<td>ID of the facility to be billed for the purchase order. See Asset</td>
+</tr>
+<tr>
+<td align="left">intLastUpdatedUserID</td>
+<td align="left">integer</td>
+<td>ID of the user that performed the last update on the purchase order.</td>
+</tr>
+<tr>
+<td align="left">intPurchaseCurrencyID</td>
+<td align="left">integer</td>
+<td>ID of the currency in which the purchase order financial transaction is to be performed.</td>
+</tr>
+<tr>
+<td align="left">intShipToCountryID</td>
+<td align="left">integer</td>
+<td>ID of the Country to which the purchase order will be shipped.</td>
+</tr>
+<tr>
+<td align="left">intShipToID</td>
+<td align="left">integer</td>
+<td>ID of the facility that will receive shipment of purchase order. See Asset</td>
+</tr>
+<tr>
+<td align="left">intSupplierCountryID</td>
+<td align="left">integer</td>
+<td>ID of the Country of the supplier.</td>
+</tr>
+<tr>
+<td align="left">intWorkOrderID</td>
+<td align="left">integer</td>
+<td>ID of WorkOrder that is associated with the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToAddress</td>
+<td align="left">string</td>
+<td>Address of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToCity</td>
+<td align="left">string</td>
+<td>City information of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToPostalCode</td>
+<td align="left">string</td>
+<td>Postal code information of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strBillToProvince</td>
+<td align="left">string</td>
+<td>Province of the facility that is to be billed for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strPurchaseOrderReference</td>
+<td align="left">string</td>
+<td>Reference number/information for the purchase order.</td>
+</tr>
+<tr>
+<td align="left">strShipToAddress</td>
+<td align="left">string</td>
+<td>Address of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strShipToCity</td>
+<td align="left">string</td>
+<td>City of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strShipToPostalCode</td>
+<td align="left">string</td>
+<td>Postal code of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strShipToProvince</td>
+<td align="left">string</td>
+<td>Province of the facility that is to receive the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierAddress</td>
+<td align="left">string</td>
+<td>Address of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierCity</td>
+<td align="left">string</td>
+<td>City of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierPostalCode</td>
+<td align="left">string</td>
+<td>Postal code of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">strSupplierProvince</td>
+<td align="left">string</td>
+<td>Province of the supplier of the purchase order items.</td>
+</tr>
+<tr>
+<td align="left">intLocationID</td>
+<td align="left">integer</td>
+<td>The id of the location for the PurchaseOrder (Used in conjunction with the Asset object).</td>
+</tr>
+</tbody>
+</table>
+<p><strong> Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+   &quot;msg&quot;: &quot;Updated successfully!&quot;
+    }
+</code></pre>
+
+<p><strong> Error Responses:</strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If fields are missed or put the wrong type of value.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Update failed&quot;
+}
+</code></pre>
+
+<h1 id="delete-scheduledmaintenace">Delete ScheduledMaintenace</h1>
+<p>Delete a ScheduledMaintenace by Id</p>
+<p><strong>URL</strong> : <code>/api/purchaseorder/:Id</code></p>
+<p><strong>Method</strong> : <code>DELETE</code></p>
+<p><strong>Auth required</strong> : <code>YES</code></p>
+<p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the ScheduledMaintenace.</p>
+<p><strong>  Success Response: </strong></p>
+<p><strong>Code</strong> : <code>200 success</code></p>
+<ul>
+<li>Resonse example</li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Deleted successfully!&quot;,
+    data: null
+}
+</code></pre>
+
+<p><strong> Error Responses : </strong></p>
+<p><strong>Code</strong> : <code>401 Unauthorized</code></p>
+<p><strong>Condition</strong> : Missing or incorrect authentication credentials and expired one.</p>
+<ul>
+<li>Resonse example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token varified failed!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;JWT token expired!&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+
+<p><strong>Condition</strong> : If there was no asset available to delete.</p>
+<p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
+<ul>
+<li>Content example </li>
+</ul>
+<pre><code class="json">{
+    &quot;msg&quot;: &quot;Delete failed&quot;,
+    &quot;data&quot;:null
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../PurchaseOrderLineItem/index.html" class="btn btn-neutral float-right" title="PurchaseOrderLineItem">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Project/index.html" class="btn btn-neutral" title="Project"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Project/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../PurchaseOrderLineItem/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-12-24 14:37:45
+-->

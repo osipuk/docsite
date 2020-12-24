@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>ScheduledMaintenance - CMMS Api Doc</title>
+  <title>PurchaseOrderLineItem - CMMS Api Doc</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "ScheduledMaintenance";
-    var mkdocs_page_input_path = "ScheduledMaintenance\\index.md";
+    var mkdocs_page_name = "PurchaseOrderLineItem";
+    var mkdocs_page_input_path = "PurchaseOrderLineItem\\index.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -108,9 +108,27 @@
     <a class="" href="../PurchaseOrder/index.html">PurchaseOrder</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../PurchaseOrderLineItem/index.html">PurchaseOrderLineItem</a>
+    <a class="current" href="index.html">PurchaseOrderLineItem</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#create-purchaseorderlineitem">Create PurchaseOrderLineItem</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</a></li>
+    
+
+    <li class="toctree-l2"><a href="#update-scheduledmaintenace">Update ScheduledMaintenace</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-scheduledmaintenace">Delete ScheduledMaintenace</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -128,27 +146,9 @@
     <a class="" href="../ReasonToSetAssetOnline/index.html">ReasonToSetAssetOnline</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">ScheduledMaintenance</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#create-scheduledmaintenance">Create ScheduledMaintenance</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</a></li>
-    
-
-    <li class="toctree-l2"><a href="#get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</a></li>
-    
-
-    <li class="toctree-l2"><a href="#update-scheduledmaintenace">Update ScheduledMaintenace</a></li>
-    
-
-    <li class="toctree-l2"><a href="#delete-scheduledmaintenace">Delete ScheduledMaintenace</a></li>
-    
-
-    </ul>
+    <a class="" href="../ScheduledMaintenance/index.html">ScheduledMaintenance</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -208,7 +208,7 @@
     
       
     
-    <li>ScheduledMaintenance</li>
+    <li>PurchaseOrderLineItem</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -218,11 +218,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-scheduledmaintenance">Create ScheduledMaintenance</h1>
-<p>A ScheduledMaintenance represents a Maintenance job that is to be done and executed by the assigned user. It contains information about the ScheduledMaintenance Maintenance Type, Date created, Priority level, Site it resides in, Asset(s) involved, and assigned User.
-See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and ScheduledMaintenanceAsset objects for more details and information. You can have multiple ScheduledMaintenance associated in your CMMS.</p>
-<p>Create a ScheduledMaintenance if  ScheduledMaintenance does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/scheduledmaintenance</code></p>
+                <h1 id="create-purchaseorderlineitem">Create PurchaseOrderLineItem</h1>
+<p>A PurchaseOrderLineItem represents a Maintenance job that is to be done and executed by the assigned user. It contains information about the PurchaseOrderLineItem Maintenance Type, Date created, Priority level, Site it resides in, Asset(s) involved, and assigned User.
+See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and PurchaseOrderLineItemAsset objects for more details and information. You can have multiple PurchaseOrderLineItem associated in your CMMS.</p>
+<p>Create a PurchaseOrderLineItem if  PurchaseOrderLineItem does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/purchaseorderlineitem</code></p>
 <p><strong>Method</strong> : <code>POST</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -236,79 +236,124 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 </thead>
 <tbody>
 <tr>
-<td align="left">intPriorityID</td>
-<td align="left">Integer</td>
-<td>The ID of the priority level for this scheduled maintenace. For getting possible values, please refer to the Priority section.</td>
+<td align="left">bolAddedDirectlyToPurchaseOrder</td>
+<td align="left">boolean</td>
+<td>A boolean that indicates if the purchase order line item is added directly to the purchase order. If set to false, it means it was added through the Purchase Planning Board.</td>
+</tr>
+<tr>
+<td align="left">bolProductionEquipmentDownWhileOnOrder</td>
+<td align="left">boolean</td>
+<td>A boolean that indicates if the production equipment is down while on order or not. This will determine if the purchase of the item is critical or not.</td>
+</tr>
+<tr>
+<td align="left">dblRemoteOrgUnitPrice</td>
+<td align="left">double</td>
+<td>The original unit price.</td>
+</tr>
+<tr>
+<td align="left">dblTaxRate</td>
+<td align="left">double</td>
+<td>The tax rate applied to the purchase order line item.</td>
+</tr>
+<tr>
+<td align="left">dblUnitPrice</td>
+<td align="left">double</td>
+<td>The price for a unit of the item.</td>
+</tr>
+<tr>
+<td align="left">dtmDateCreated</td>
+<td align="left">date</td>
+<td>A date that represents when the item was created.</td>
+</tr>
+<tr>
+<td align="left">dtmRequiredByDate</td>
+<td align="left">date</td>
+<td>The item purchased will be required by this date.</td>
+</tr>
+<tr>
+<td align="left">intAccountID</td>
+<td align="left">integer</td>
+<td>An integer uniquely identifying the account used to purchase the item. Please refer to Account</td>
+</tr>
+<tr>
+<td align="left">intAssetID</td>
+<td align="left">integer</td>
+<td>An integer that uniquely identifies the asset linked to the purchased item. Please refer to Asset</td>
+</tr>
+<tr>
+<td align="left">intChargeDepartmentID</td>
+<td align="left">integer</td>
+<td>An integer that uniquely defines the Charge Department</td>
+</tr>
+<tr>
+<td align="left">intPurchaseOrderID</td>
+<td align="left">integer</td>
+<td>The ID of the purchase order which the purchase order line item is part of.</td>
+</tr>
+<tr>
+<td align="left">intRequestedByUserID</td>
+<td align="left">integer</td>
+<td>The ID of the user who requested the purchase order. Please refer to User.</td>
+</tr>
+<tr>
+<td align="left">intShipToLocationID</td>
+<td align="left">integer</td>
+<td>The reference to the location where the purchased item will be shipped. Please refer to Location</td>
 </tr>
 <tr>
 <td align="left">intSiteID</td>
-<td align="left">Integer</td>
-<td>For multi-sites tenants, the ID of the site where the maintenace is taking place at. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
+<td align="left">integer</td>
+<td>The ID of the site where the purchase order will be shipped. A site is an asset itself, so for possible values, please refer to the Asset</td>
 </tr>
 <tr>
-<td align="left">intStartAsWorkOrderStatusID</td>
-<td align="left">Integer</td>
-<td>An Integer that represents the id of a WorkOrderStatus</td>
+<td align="left">intSourceAssetID</td>
+<td align="left">integer</td>
+<td>The ID of the asset that represents the source asset of the purchase order item. Please refer to Asset</td>
 </tr>
 <tr>
-<td align="left">intScheduledMaintenanceStatusID</td>
-<td align="left">Integer</td>
-<td>An integer that represents the status of the ScheduledMaintenance. Possible values STATUS_PAUSED=0, STATUS_PLAYING=1</td>
+<td align="left">intSourceWorkOrderID</td>
+<td align="left">integer</td>
+<td>The ID of the source work order to which the purchase order line item is related. Please refer to WorkOrder</td>
 </tr>
 <tr>
-<td align="left">intSuggestedCompletion</td>
-<td align="left">Integer</td>
-<td>The estimated number of days that the generated work order should be completed by.</td>
+<td align="left">intStockHistoryID</td>
+<td align="left">integer</td>
+<td>The ID of the stock history record related to the purchase order item.</td>
 </tr>
 <tr>
-<td align="left">dtmUpdatedDate</td>
-<td align="left">timestamp</td>
-<td>The date and time when the ScheduledMaintenace was updated(UNIX epoch miliseconds).</td>
+<td align="left">intStockID</td>
+<td align="left">integer</td>
+<td>The ID of the stock related to the purchase order item. Please refer to Stock</td>
 </tr>
 <tr>
-<td align="left">strCode</td>
-<td align="left">String</td>
-<td>A code that represents the ScheduledMaintenace</td>
+<td align="left">intSupplierID</td>
+<td align="left">integer</td>
+<td>The ID of the business that fulfills the purchased order item. Please refer to Business</td>
 </tr>
 <tr>
-<td align="left">intProjectId</td>
-<td align="left">Integer</td>
-<td>The ID of the Project.</td>
+<td align="left">qtyOnOrder</td>
+<td align="left">integer</td>
+<td>The quantity requested on the purchase order line item.</td>
 </tr>
 <tr>
-<td align="left">strCompletionNotes</td>
-<td align="left">String</td>
-<td>A string that represents the completion notes on this ScheduledMaintenace.</td>
+<td align="left">qtyRecieved</td>
+<td align="left">integer</td>
+<td>The quantity received on the purchase order line item.</td>
 </tr>
 <tr>
-<td align="left">dtmCreateDate</td>
-<td align="left">timestamp</td>
-<td>The date and time when the ScheduledMaintenance was created (UNIX epoch milliseconds).</td>
-</tr>
-<tr>
-<td align="left">intMaintenanceTypeID</td>
-<td align="left">Integer</td>
-<td>An integer that represents the id of the MaintenaceType</td>
-</tr>
-<tr>
-<td align="left">intRequestorUserID</td>
-<td align="left">Integer</td>
-<td>An integer that represents the id of a User who requested the scheduled maintenace.</td>
+<td align="left">strBusinessAssetNumber</td>
+<td align="left">string</td>
+<td>The description for the business asset related to the purchase order line item.</td>
 </tr>
 <tr>
 <td align="left">strDescription</td>
-<td align="left">String</td>
-<td>As string that represents the description on the ScheduledMaintenance.</td>
+<td align="left">string</td>
+<td>As string that represents the description on the Purchase order line item.</td>
 </tr>
 <tr>
-<td align="left">bolCanFireSMwithOpenWO</td>
-<td align="left">boolean</td>
-<td>If set to true, a new work order will be created even if there are existing work orders taht are not closed from this scheduled maintenace.</td>
-</tr>
-<tr>
-<td align="left">bolWORequiresSignature</td>
-<td align="left">boolean</td>
-<td>If set to true, indicates that the Work Orders generated from the ScheduledMaintenance need to be signed. A Work Order generated from the ScheduledMaintenace does not need to be signed if this is set to false.</td>
+<td align="left">intUpdated</td>
+<td align="left">integer</td>
+<td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
 </tr>
 </tbody>
 </table>
@@ -367,26 +412,30 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
     &quot;data&quot;: [
         {
             &quot;_id&quot;: &quot;5&quot;,
-            &quot;intPriorityID&quot;:&quot;Integer&quot;,
-            &quot;intSiteID&quot;:Object,
-            &quot;intStartAsWorkOrderStatusID&quot;:3,
-            &quot;intScheduledMaintenanceStatusID&quot;:&quot;Integer&quot;,
-            &quot;intSuggestedCompletion&quot;:&quot;Integer&quot;,
-            &quot;dtmUpdatedDate&quot;:2020-11-09T07:35:22.052+00:00,
-            &quot;strCode&quot;:&quot;String&quot;,
-            &quot;intProjectID&quot;:Object,
-            &quot;strCompletionNotes&quot;:&quot;String&quot;,
-            &quot;dtmCreateDate&quot;:2020-11-09T07:35:22.052+00:00,
-            &quot;intMaintenanceTypeID&quot;:&quot;Integer&quot;,
-            &quot;intRequestorUserID&quot;:&quot;Integer&quot;,
-            &quot;strDescription&quot;:&quot;String&quot;,
-            &quot;bolCanFireSMWithOpenWO&quot;:true,
-            &quot;bolWORequiresSignature&quot;:true,
-            &quot;intAccountID&quot;:Object,
-            &quot;intChargeDepartmentID&quot;:Object,
-            &quot;intAssignedToUserID&quot;:Object,
-            &quot;strWorkInstruction&quot;:&quot;String&quot;,
-            &quot;dblTimeEstimatedHours&quot;:2.5
+            &quot;intUserID&quot;:Integer,
+            &quot;bolAddedDirectlyToPurchaseOrder&quot;:boolean,
+            &quot;dblRemoteOrgUnitPrice&quot;:double,
+            &quot;dblTaxRate&quot;:2.8,
+            &quot;dblUnitPrice&quot;:45,
+            &quot;dtmDateCreated&quot;:date,
+            &quot;dtmRequiredByDate&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;intAccountID&quot;:Integer,
+            &quot;intAssetID&quot;:2,
+            &quot;intChargeDepartmentID&quot;:3,
+            &quot;intPurchaseOrderID&quot;:4,
+            &quot;intRequestedByUserID&quot;:55,
+            &quot;intShipToLocationID&quot;:23,
+            &quot;intSiteID&quot;:345,
+            &quot;intSourceAssetID&quot;:5,
+            &quot;intSourceWorkOrderID&quot;:1,
+            &quot;intStockHistoryID&quot;:23,
+            &quot;intStockID&quot;:44,
+            &quot;intSupplierID&quot;:54,
+            &quot;qtyOnOrder&quot;:21,
+            &quot;qtyRecieved&quot;:22,
+            &quot;strBusinessAssetNumber&quot;:string,
+            &quot;strDescription&quot;:&quot;this is description...&quot;,
+            &quot;intUpdated&quot;:Integer,
             &quot;__v&quot;: 0
         },
         ...
@@ -424,7 +473,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 
 <h1 id="get-single-scheduledmaintenace-by-id">Get Single ScheduledMaintenace By Id</h1>
 <p>Get a single ScheduledMaintenace by id if current ScheduledMaintenace was registered on it.</p>
-<p><strong>URL</strong> : <code>/api/scheduledmaintenance/:Id</code></p>
+<p><strong>URL</strong> : <code>/api/purchaseorderlineitem/:Id</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -438,27 +487,31 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
     &quot;msg&quot;: &quot;Found!&quot;,
     &quot;data&quot;: 
         {
-            &quot;_id&quot;: &quot;5&quot;,
-            &quot;intPriorityID&quot;:&quot;Integer&quot;,
-            &quot;intSiteID&quot;:Object,
-            &quot;intStartAsWorkOrderStatusID&quot;:3,
-            &quot;intScheduledMaintenanceStatusID&quot;:&quot;Integer&quot;,
-            &quot;intSuggestedCompletion&quot;:&quot;Integer&quot;,
-            &quot;dtmUpdatedDate&quot;:2020-11-09T07:35:22.052+00:00,
-            &quot;strCode&quot;:&quot;String&quot;,
-            &quot;intProjectID&quot;:Object,
-            &quot;strCompletionNotes&quot;:&quot;String&quot;,
-            &quot;dtmCreateDate&quot;:2020-11-09T07:35:22.052+00:00,
-            &quot;intMaintenanceTypeID&quot;:&quot;Integer&quot;,
-            &quot;intRequestorUserID&quot;:&quot;Integer&quot;,
-            &quot;strDescription&quot;:&quot;String&quot;,
-            &quot;bolCanFireSMWithOpenWO&quot;:true,
-            &quot;bolWORequiresSignature&quot;:true,
-            &quot;intAccountID&quot;:Object,
-            &quot;intChargeDepartmentID&quot;:Object,
-            &quot;intAssignedToUserID&quot;:Object,
-            &quot;strWorkInstruction&quot;:&quot;String&quot;,
-            &quot;dblTimeEstimatedHours&quot;:2.5
+            &quot;_id&quot;: &quot;5&quot;,           
+            &quot;intUserID&quot;:Integer,
+            &quot;bolAddedDirectlyToPurchaseOrder&quot;:boolean,
+            &quot;dblRemoteOrgUnitPrice&quot;:double,
+            &quot;dblTaxRate&quot;:2.8,
+            &quot;dblUnitPrice&quot;:45,
+            &quot;dtmDateCreated&quot;:date,
+            &quot;dtmRequiredByDate&quot;:2020-11-09T07:35:22.052+00:00,
+            &quot;intAccountID&quot;:Integer,
+            &quot;intAssetID&quot;:2,
+            &quot;intChargeDepartmentID&quot;:3,
+            &quot;intPurchaseOrderID&quot;:4,
+            &quot;intRequestedByUserID&quot;:55,
+            &quot;intShipToLocationID&quot;:23,
+            &quot;intSiteID&quot;:345,
+            &quot;intSourceAssetID&quot;:5,
+            &quot;intSourceWorkOrderID&quot;:1,
+            &quot;intStockHistoryID&quot;:23,
+            &quot;intStockID&quot;:44,
+            &quot;intSupplierID&quot;:54,
+            &quot;qtyOnOrder&quot;:21,
+            &quot;qtyRecieved&quot;:22,
+            &quot;strBusinessAssetNumber&quot;:string,
+            &quot;strDescription&quot;:&quot;this is description...&quot;,
+            &quot;intUpdated&quot;:Integer
         }
 }
 </code></pre>
@@ -495,7 +548,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 
 <h1 id="update-scheduledmaintenace">Update ScheduledMaintenace</h1>
 <p>Update the ScheduledMaintenace by Id</p>
-<p><strong>URL</strong> : <code>/api/scheduledmaintenance/:Id</code></p>
+<p><strong>URL</strong> : <code>/api/purchaseorderlineitem/:Id</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -510,79 +563,124 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 </thead>
 <tbody>
 <tr>
-<td align="left">intPriorityID</td>
-<td align="left">Integer</td>
-<td>The ID of the priority level for this scheduled maintenace. For getting possible values, please refer to the Priority section.</td>
+<td align="left">bolAddedDirectlyToPurchaseOrder</td>
+<td align="left">boolean</td>
+<td>A boolean that indicates if the purchase order line item is added directly to the purchase order. If set to false, it means it was added through the Purchase Planning Board.</td>
+</tr>
+<tr>
+<td align="left">bolProductionEquipmentDownWhileOnOrder</td>
+<td align="left">boolean</td>
+<td>A boolean that indicates if the production equipment is down while on order or not. This will determine if the purchase of the item is critical or not.</td>
+</tr>
+<tr>
+<td align="left">dblRemoteOrgUnitPrice</td>
+<td align="left">double</td>
+<td>The original unit price.</td>
+</tr>
+<tr>
+<td align="left">dblTaxRate</td>
+<td align="left">double</td>
+<td>The tax rate applied to the purchase order line item.</td>
+</tr>
+<tr>
+<td align="left">dblUnitPrice</td>
+<td align="left">double</td>
+<td>The price for a unit of the item.</td>
+</tr>
+<tr>
+<td align="left">dtmDateCreated</td>
+<td align="left">date</td>
+<td>A date that represents when the item was created.</td>
+</tr>
+<tr>
+<td align="left">dtmRequiredByDate</td>
+<td align="left">date</td>
+<td>The item purchased will be required by this date.</td>
+</tr>
+<tr>
+<td align="left">intAccountID</td>
+<td align="left">integer</td>
+<td>An integer uniquely identifying the account used to purchase the item. Please refer to Account</td>
+</tr>
+<tr>
+<td align="left">intAssetID</td>
+<td align="left">integer</td>
+<td>An integer that uniquely identifies the asset linked to the purchased item. Please refer to Asset</td>
+</tr>
+<tr>
+<td align="left">intChargeDepartmentID</td>
+<td align="left">integer</td>
+<td>An integer that uniquely defines the Charge Department</td>
+</tr>
+<tr>
+<td align="left">intPurchaseOrderID</td>
+<td align="left">integer</td>
+<td>The ID of the purchase order which the purchase order line item is part of.</td>
+</tr>
+<tr>
+<td align="left">intRequestedByUserID</td>
+<td align="left">integer</td>
+<td>The ID of the user who requested the purchase order. Please refer to User.</td>
+</tr>
+<tr>
+<td align="left">intShipToLocationID</td>
+<td align="left">integer</td>
+<td>The reference to the location where the purchased item will be shipped. Please refer to Location</td>
 </tr>
 <tr>
 <td align="left">intSiteID</td>
-<td align="left">Integer</td>
-<td>For multi-sites tenants, the ID of the site where the maintenace is taking place at. A site is an asset itself, so for possible values, please refer to the Asset section.</td>
+<td align="left">integer</td>
+<td>The ID of the site where the purchase order will be shipped. A site is an asset itself, so for possible values, please refer to the Asset</td>
 </tr>
 <tr>
-<td align="left">intStartAsWorkOrderStatusID</td>
-<td align="left">Integer</td>
-<td>An Integer that represents the id of a WorkOrderStatus</td>
+<td align="left">intSourceAssetID</td>
+<td align="left">integer</td>
+<td>The ID of the asset that represents the source asset of the purchase order item. Please refer to Asset</td>
 </tr>
 <tr>
-<td align="left">intScheduledMaintenanceStatusID</td>
-<td align="left">Integer</td>
-<td>An integer that represents the status of the ScheduledMaintenance. Possible values STATUS_PAUSED=0, STATUS_PLAYING=1</td>
+<td align="left">intSourceWorkOrderID</td>
+<td align="left">integer</td>
+<td>The ID of the source work order to which the purchase order line item is related. Please refer to WorkOrder</td>
 </tr>
 <tr>
-<td align="left">intSuggestedCompletion</td>
-<td align="left">Integer</td>
-<td>The estimated number of days that the generated work order should be completed by.</td>
+<td align="left">intStockHistoryID</td>
+<td align="left">integer</td>
+<td>The ID of the stock history record related to the purchase order item.</td>
 </tr>
 <tr>
-<td align="left">dtmUpdatedDate</td>
-<td align="left">timestamp</td>
-<td>The date and time when the ScheduledMaintenace was updated(UNIX epoch miliseconds).</td>
+<td align="left">intStockID</td>
+<td align="left">integer</td>
+<td>The ID of the stock related to the purchase order item. Please refer to Stock</td>
 </tr>
 <tr>
-<td align="left">strCode</td>
-<td align="left">String</td>
-<td>A code that represents the ScheduledMaintenace</td>
+<td align="left">intSupplierID</td>
+<td align="left">integer</td>
+<td>The ID of the business that fulfills the purchased order item. Please refer to Business</td>
 </tr>
 <tr>
-<td align="left">intProjectId</td>
-<td align="left">Integer</td>
-<td>The ID of the Project.</td>
+<td align="left">qtyOnOrder</td>
+<td align="left">integer</td>
+<td>The quantity requested on the purchase order line item.</td>
 </tr>
 <tr>
-<td align="left">strCompletionNotes</td>
-<td align="left">String</td>
-<td>A string that represents the completion notes on this ScheduledMaintenace.</td>
+<td align="left">qtyRecieved</td>
+<td align="left">integer</td>
+<td>The quantity received on the purchase order line item.</td>
 </tr>
 <tr>
-<td align="left">dtmCreateDate</td>
-<td align="left">timestamp</td>
-<td>The date and time when the ScheduledMaintenance was created (UNIX epoch milliseconds).</td>
-</tr>
-<tr>
-<td align="left">intMaintenanceTypeID</td>
-<td align="left">Integer</td>
-<td>An integer that represents the id of the MaintenaceType</td>
-</tr>
-<tr>
-<td align="left">intRequestorUserID</td>
-<td align="left">Integer</td>
-<td>An integer that represents the id of a User who requested the scheduled maintenace.</td>
+<td align="left">strBusinessAssetNumber</td>
+<td align="left">string</td>
+<td>The description for the business asset related to the purchase order line item.</td>
 </tr>
 <tr>
 <td align="left">strDescription</td>
-<td align="left">String</td>
-<td>As string that represents the description on the ScheduledMaintenance.</td>
+<td align="left">string</td>
+<td>As string that represents the description on the Purchase order line item.</td>
 </tr>
 <tr>
-<td align="left">bolCanFireSMwithOpenWO</td>
-<td align="left">boolean</td>
-<td>If set to true, a new work order will be created even if there are existing work orders taht are not closed from this scheduled maintenace.</td>
-</tr>
-<tr>
-<td align="left">bolWORequiresSignature</td>
-<td align="left">boolean</td>
-<td>If set to true, indicates that the Work Orders generated from the ScheduledMaintenance need to be signed. A Work Order generated from the ScheduledMaintenace does not need to be signed if this is set to false.</td>
+<td align="left">intUpdated</td>
+<td align="left">integer</td>
+<td>An integer capturing the most recent write of a resource in UNIX epoch milliseconds, or milliseconds since 1970-01-01 00:00:00 UTC. The field is read-only and will reflect the time a resource was created if it hasn't been updated at all or the time it was most recently updated.</td>
 </tr>
 </tbody>
 </table>
@@ -626,7 +724,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 
 <h1 id="delete-scheduledmaintenace">Delete ScheduledMaintenace</h1>
 <p>Delete a ScheduledMaintenace by Id</p>
-<p><strong>URL</strong> : <code>/api/scheduledmaintenance/:Id</code></p>
+<p><strong>URL</strong> : <code>/api/purchaseorderlineitem/:Id</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -677,10 +775,10 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ScheduleTrigger/index.html" class="btn btn-neutral float-right" title="ScheduleTrigger">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../PurchaseOrderStatus/index.html" class="btn btn-neutral float-right" title="PurchaseOrderStatus">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ReasonToSetAssetOnline/index.html" class="btn btn-neutral" title="ReasonToSetAssetOnline"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../PurchaseOrder/index.html" class="btn btn-neutral" title="PurchaseOrder"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -706,10 +804,10 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ReasonToSetAssetOnline/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../PurchaseOrder/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../ScheduleTrigger/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../PurchaseOrderStatus/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
