@@ -228,7 +228,7 @@
     <a class="current" href="index.html">ScheduledMaintenance</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#create-scheduledmaintenance">Create ScheduledMaintenance</a></li>
+    <li class="toctree-l2"><a href="#create-scheduledmaintenace">Create ScheduledMaintenace</a></li>
     
 
     <li class="toctree-l2"><a href="#get-all-scheduledmaintenace-list">Get all ScheduledMaintenace list</a></li>
@@ -358,11 +358,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-scheduledmaintenance">Create ScheduledMaintenance</h1>
-<p>A ScheduledMaintenance represents a Maintenance job that is to be done and executed by the assigned user. It contains information about the ScheduledMaintenance Maintenance Type, Date created, Priority level, Site it resides in, Asset(s) involved, and assigned User.
-See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and ScheduledMaintenanceAsset objects for more details and information. You can have multiple ScheduledMaintenance associated in your CMMS.</p>
-<p>Create a ScheduledMaintenance if  ScheduledMaintenance does not already exist.</p>
-<p><strong>URL</strong> : <code>/api/scheduledmaintenance</code></p>
+                <h1 id="create-scheduledmaintenace">Create ScheduledMaintenace</h1>
+<p>A ScheduledMaintenace represents a Maintenance job that is to be done and executed by the assigned user. It contains information about the ScheduledMaintenace Maintenance Type, Date created, Priority level, Site it resides in, Asset(s) involved, and assigned User.
+See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and ScheduledMaintenanceAsset objects for more details and information. You can have multiple ScheduledMaintenace associated in your CMMS.</p>
+<p>Create a ScheduledMaintenace if  ScheduledMaintenace does not already exist.</p>
+<p><strong>URL</strong> : <code>/api/scheduledmaintenace</code></p>
 <p><strong>Method</strong> : <code>POST</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
@@ -393,7 +393,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 <tr>
 <td align="left">intScheduledMaintenanceStatusID</td>
 <td align="left">Integer</td>
-<td>An integer that represents the status of the ScheduledMaintenance. Possible values STATUS_PAUSED=0, STATUS_PLAYING=1</td>
+<td>An integer that represents the status of the ScheduledMaintenace. Possible values STATUS_PAUSED=0, STATUS_PLAYING=1</td>
 </tr>
 <tr>
 <td align="left">intSuggestedCompletion</td>
@@ -423,7 +423,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 <tr>
 <td align="left">dtmCreateDate</td>
 <td align="left">timestamp</td>
-<td>The date and time when the ScheduledMaintenance was created (UNIX epoch milliseconds).</td>
+<td>The date and time when the ScheduledMaintenace was created (UNIX epoch milliseconds).</td>
 </tr>
 <tr>
 <td align="left">intMaintenanceTypeID</td>
@@ -438,7 +438,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 <tr>
 <td align="left">strDescription</td>
 <td align="left">String</td>
-<td>As string that represents the description on the ScheduledMaintenance.</td>
+<td>As string that represents the description on the ScheduledMaintenace.</td>
 </tr>
 <tr>
 <td align="left">bolCanFireSMwithOpenWO</td>
@@ -448,7 +448,7 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 <tr>
 <td align="left">bolWORequiresSignature</td>
 <td align="left">boolean</td>
-<td>If set to true, indicates that the Work Orders generated from the ScheduledMaintenance need to be signed. A Work Order generated from the ScheduledMaintenace does not need to be signed if this is set to false.</td>
+<td>If set to true, indicates that the Work Orders generated from the ScheduledMaintenace need to be signed. A Work Order generated from the ScheduledMaintenace does not need to be signed if this is set to false.</td>
 </tr>
 </tbody>
 </table>
@@ -862,5 +862,5 @@ See the MaintennaceType, SheduledMaintenaceUser, SheduledMaintenancePart, and Sc
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2021-02-05 04:21:44
+Build Date UTC : 2021-02-05 13:48:17
 -->

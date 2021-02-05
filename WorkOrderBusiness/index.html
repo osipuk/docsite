@@ -286,16 +286,16 @@
     <li class="toctree-l2"><a href="#create-workorderbusiness">Create WorkOrderBusiness</a></li>
     
 
-    <li class="toctree-l2"><a href="#get-all-asset-list">Get all asset list</a></li>
+    <li class="toctree-l2"><a href="#get-all-workorderbusiness-list">Get all WorkOrderBusiness list</a></li>
     
 
-    <li class="toctree-l2"><a href="#update-asset">Update Asset</a></li>
+    <li class="toctree-l2"><a href="#update-workorderbusiness">Update WorkOrderBusiness</a></li>
     
 
-    <li class="toctree-l2"><a href="#get-single-asset-by-id">Get Single Asset By Id</a></li>
+    <li class="toctree-l2"><a href="#get-single-workorderbusiness-by-id">Get Single WorkOrderBusiness By Id</a></li>
     
 
-    <li class="toctree-l2"><a href="#delete-asset">Delete  Asset</a></li>
+    <li class="toctree-l2"><a href="#delete-workorderbusiness">Delete  WorkOrderBusiness</a></li>
     
 
     </ul>
@@ -419,7 +419,7 @@
 <li>Resonse example</li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Asset added successfully!&quot;,
+   &quot;msg&quot;: &quot;WorkOrderBusiness added successfully!&quot;,
     &quot;data&quot;: {id: &quot;4rt8a89c24753232419483c&quot;}
     }
 </code></pre>
@@ -457,8 +457,8 @@
 }
 </code></pre>
 
-<h1 id="get-all-asset-list">Get all asset list</h1>
-<p>Get the all registered asset list.</p>
+<h1 id="get-all-workorderbusiness-list">Get all WorkOrderBusiness list</h1>
+<p>Get the all registered WorkOrderBusiness list.</p>
 <p><strong>URL</strong> : <code>/api/workorderbusiness</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
@@ -469,7 +469,7 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Asset list found!&quot;,
+    &quot;msg&quot;: &quot;WorkOrderBusiness list found!&quot;,
     &quot;data&quot;: [
         {
             &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
@@ -513,13 +513,13 @@
 }
 </code></pre>
 
-<h1 id="update-asset">Update Asset</h1>
-<p>Update the Asset by Id</p>
+<h1 id="update-workorderbusiness">Update WorkOrderBusiness</h1>
+<p>Update the WorkOrderBusiness by Id</p>
 <p><strong>URL</strong> : <code>/api/workorderbusiness/:uid</code></p>
 <p><strong>Method</strong> : <code>PUT</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the asset.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorderbusiness.</p>
 <table>
 <thead>
 <tr>
@@ -574,7 +574,7 @@
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Asset updated successfully!&quot;
+   &quot;msg&quot;: &quot;WorkOrderBusiness updated successfully!&quot;
     }
 </code></pre>
 
@@ -606,20 +606,20 @@
 }
 </code></pre>
 
-<h1 id="get-single-asset-by-id">Get Single Asset By Id</h1>
-<p>Get a single Asset by id if current asset was registered on it.</p>
+<h1 id="get-single-workorderbusiness-by-id">Get Single WorkOrderBusiness By Id</h1>
+<p>Get a single WorkOrderBusiness by id if current workorderbusiness was registered on it.</p>
 <p><strong>URL</strong> : <code>/api/workorderbusiness/:workorderbusinessid</code></p>
 <p><strong>Method</strong> : <code>GET</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the asset.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorderbusiness.</p>
 <p><strong> Success Response: </strong></p>
 <p><strong>Code</strong> : <code>200 success</code></p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;&quot;Asset found!&quot;,
+    &quot;msg&quot;: &quot;&quot;WorkOrderBusiness found!&quot;,
     &quot;data&quot;: 
         {
             &quot;_id&quot;: &quot;5f6896897b9884253cf6bdb6&quot;,
@@ -652,31 +652,31 @@
 </code></pre>
 
 <p><strong> Or </strong></p>
-<p><strong>Condition</strong> : If asset does not exist on server.</p>
+<p><strong>Condition</strong> : If workorderbusiness does not exist on server.</p>
 <p><strong>Code</strong> : <code>404 Not Found</code></p>
 <ul>
 <li>Content example </li>
 </ul>
 <pre><code class="json">{
-   &quot;msg&quot;: &quot;Asset not found&quot;, 
+   &quot;msg&quot;: &quot;WorkOrderBusiness not found&quot;, 
    &quot;data&quot;:null
 }
 </code></pre>
 
-<h1 id="delete-asset">Delete  Asset</h1>
-<p>Delete the Asset by Id</p>
+<h1 id="delete-workorderbusiness">Delete  WorkOrderBusiness</h1>
+<p>Delete the WorkOrderBusiness by Id</p>
 <p><strong>URL</strong> : <code>/api/workorderbusiness/:workorderbusinessid</code></p>
 <p><strong>Method</strong> : <code>DELETE</code></p>
 <p><strong>Auth required</strong> : <code>YES</code></p>
 <p><strong>Header</strong> : <code>Authorization:{jwt-token}</code></p>
-<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the asset.</p>
+<p><strong>URL Parameters</strong> :  An integer that uniquely identifies the workorderbusiness.</p>
 <p><strong> Success Response </strong>
 <strong>Code</strong> : <code>200 success</code> </p>
 <ul>
 <li>Resonse example </li>
 </ul>
 <pre><code class="json">{
-    &quot;msg&quot;: &quot;Asset deleted successfully!&quot;,
+    &quot;msg&quot;: &quot;WorkOrderBusiness deleted successfully!&quot;,
     data: null
 }
 </code></pre>
@@ -699,7 +699,7 @@
 }
 </code></pre>
 
-<p><strong>Condition</strong> : If there was no asset available to delete.</p>
+<p><strong>Condition</strong> : If there was no workorderbusiness available to delete.</p>
 <p><strong>Code</strong> : <code>400 BAD REQUEST</code></p>
 <ul>
 <li>Content example </li>
@@ -761,5 +761,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2021-02-05 04:21:44
+Build Date UTC : 2021-02-05 13:48:17
 -->
